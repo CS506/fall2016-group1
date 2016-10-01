@@ -14,6 +14,15 @@
 ### Implementation Quality Characteristics
 *Coming soon*
 
+
+## High-level Features
+
+These are the high-level features the customers wants in order to differentiate his service from other services:
+* Buckets
+* Choice of window period
+* Choice of anonymity
+
+
 ## High-level Requirements
 
 1. The user shall have the option to create an account in the service.
