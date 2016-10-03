@@ -1,12 +1,12 @@
 # Testability Measurements
 
-We will use three kinds of test methods in requirements testing (adapted from [Requirements Specification and Testing by Tor Stalhane](www.idi.ntnu.no/emner/tdt4242/foiler/3-2-Testability.ppt)):
+We will use three kinds of test methods in requirements testing (adapted from [Requirements Specification and Testing by Tor Stalhane](http://www.idi.ntnu.no/emner/tdt4242/foiler/3-2-Testability.ppt)):
 
 * T – Tests. Input/output. Involves the computer system and peripherals.
 * E – Experiments. Input/output but involves also the users.
 * I – Inspections. Evaluation based on documents.
 
-This table gives each detailed requirement of the baseline requirements. If the requirement is testable, we give a "T", "E", or "I" depending on the kind of test method.
+This table gives each detailed requirement of the baseline requirements. If the requirement is testable, we give a "T", "E", or "I" depending on the kind of test method appropriate.
 
 Requirement number | Test method
 --- | ---
