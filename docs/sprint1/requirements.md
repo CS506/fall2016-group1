@@ -15,7 +15,7 @@
         1. If any form field value is inconsistent with the data requirements, the service shall display a warning message to the user and prevent the user from creating an account.
     1. If validation is successful, the service shall create an account for the user.
         1. The service shall convert the case-insensitive form field values as specified in ***Section 4.i*** to lowercase.
-        1. The service shall save the form field values 
+        1. The service shall insert the form field values in the database as a new `user` document.
     1. The service shall prevent duplicate accounts.
         1. The service shall determine if another account exists which has the same username as the username value supplied by the user.
             1. If there is a match, the service shall display a warning and prevent the user from creating an account.
