@@ -17,6 +17,6 @@ Feature | Assignee(s)
 Create account | Russ, Ashish, Raghav
 Login | Zach, Abhi
 
-## Other artifacts
+## Other Artifacts
 * [Detailed requirements](./requirements.md)
 * [Metric measurements](./metrics.md)

@@ -1,4 +1,4 @@
-# Spring 1 Metric Measurements
+# Sprint 1 Metric Measurements
 
 ## Requirements Phase
 
