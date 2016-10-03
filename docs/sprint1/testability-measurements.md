@@ -6,6 +6,13 @@ We will use three kinds of test methods in requirements testing (adapted from [R
 * E – Experiments. Input/output but involves also the users.
 * I – Inspections. Evaluation based on documents.
 
+## Summary of Results
+
+* 38 detailed requirements total
+* **21 (55%) are testable**
+
+## Complete Tabular Results
+
 This table gives each detailed requirement of the baseline requirements. If the requirement is testable, we give a "T", "E", or "I" depending on the kind of test method appropriate.
 
 Requirement number | Test method
@@ -49,4 +56,7 @@ Requirement number | Test method
 4.ii.b. | no
 4.ii.c. | T
 
-(38 detailed requirements total)
+
+## Observations
+
+* Many of the non-testable requirements are just too vague to be tested. However, some of these non-testable requirements are broken down into more detailed requirements that *are* testable. Perhaps we should consider "redefining" what we mean by a *requirement*. Perhaps we should consider a single requirement to be more than just a single bullet point?
