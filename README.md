@@ -1,3 +1,3 @@
-# Twitter-like Service
+# Buckchat Messaging Service
 
-The `docs` directory contains all code artifacts except for source code.
+Please put all non-source code artifacts in the `docs` directory in the appropriate sprint directory.
