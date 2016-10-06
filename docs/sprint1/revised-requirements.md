@@ -1,4 +1,4 @@
-## Detailed Requirements
+## Detailed Requirements (revised version)
 1. The web service shall display a home page for the user when the user accesses the service.
     1. If the user is not logged in, the web service shall display an Intro page allowing the user to (1) login and (2) create an account. 
     1. If the user is logged in, the web service shall display a home page with the following greeting message: "Welcome!"
