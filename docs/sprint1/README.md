@@ -18,5 +18,8 @@ Create account | Russ, Ashish, Raghav
 Login | Zach, Abhi
 
 ## Other Artifacts
-* [Detailed requirements](./requirements.md)
+* [Baselined requirements](./baselined-requirements.md)
+* [Revised requirements](./revised-requirements.md)\*
 * [Metric measurements](./metrics.md)
+
+\*Revised after measuring our requirements metrics.
