@@ -11,7 +11,10 @@ Artifacts for a specific sprint can be found in the corresponding directory abov
 * Self-completeness
 
 ### Design Quality Characteristics
-*Coming soon*
+
+* Understandability
+* Robustness
+* Flexibility
 
 ### Implementation Quality Characteristics
 *Coming soon*
