@@ -30,8 +30,8 @@ These are the high-level features the customers wants in order to differentiate 
 
 ## High-level Requirements
 
-1. The user shall have the option to create an account in the service.
-    1. The user shall specify basic information to create an account.
+1. The user shall have the option to create an account with the service.
+    1. The user shall specify basic information to register.
 1. The user shall have the option to login with an existing account in another social media service.
 1. The service shall allow the user to post messages, which are called *drips*.
 1. The service shall organize drips into *buckets*.

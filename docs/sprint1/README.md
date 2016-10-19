@@ -5,8 +5,8 @@
 * End date: October 7, 2016
 
 ## Features
-* Ability to create an account
-* Ability to login
+* Register
+* Login
 
 ## Assignments
 
@@ -14,7 +14,7 @@ This table gives the assignments for the design and implementation artifacts.
 
 Feature | Assignee(s)
 --- | ---
-Create account | Russ, Ashish, Raghav
+Register | Russ, Ashish, Raghav
 Login | Zach, Abhi
 
 ## Other Artifacts
