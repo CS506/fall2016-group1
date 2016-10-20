@@ -17,7 +17,7 @@ Self-completeness | *Coming soon*
 Metric | Value
 --- | ---
 Understandability | *Coming soon*
-Robustness | *Coming soon*
+Robustness | *[In progress](./design-robustness-measurements.md)*
 Flexibility | *Coming soon*
 
 
