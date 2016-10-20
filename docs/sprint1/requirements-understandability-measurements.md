@@ -1,4 +1,4 @@
-# Understandability Measurements
+# Requirements Understandability Measurements
 
 Understandability is defined as the degree to which a requirement is understandable by the reader. The amount of comprehensiveness is measured using a checklist that is as mentioned in the book *Software Engineering, Modern Approaches 2nd Edition* written by Eric J. Braude, John Wily & Sons. The checklist is as mentioned below:
 
