@@ -8,17 +8,17 @@ These metrics are measured against the [baselined-requirements](./baselined-requ
 Metric | Coverage
 --- | ---
 Understandability | <p align="center"> [50%](./requirements-understandability-measurements.md) </p>
-Testability | [55%](./requirements-testability-measurements.md)
-Self-completeness | *Coming soon*
+Testability | <p align="center"> [55%](./requirements-testability-measurements.md) </p>
+Self-completeness | <p align="center"> *Coming soon* </p>
 
 
 ## Design Phase
 
 Metric | Coverage
 --- | ---
-Understandability | *Coming soon*
-Robustness | [50%](./design-robustness-measurements.md)
-Flexibility | *Coming soon*
+Understandability | <p align="center"> *Coming soon* </p>
+Robustness | <p align="center"> [50%](./design-robustness-measurements.md) </p>
+Flexibility | <p align="center"> *Coming soon* </p>
 
 
 ## Implementation Phase
