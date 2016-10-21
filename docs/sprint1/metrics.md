@@ -16,7 +16,7 @@ Self-completeness | *Coming soon*
 
 Metric | Coverage
 --- | :---:
-Understandability | *Coming soon*
+Understandability | [82.5%](./design-understandability-measurements.md)
 Robustness | [50%](./design-robustness-measurements.md)
 Flexibility | *Coming soon*
 
