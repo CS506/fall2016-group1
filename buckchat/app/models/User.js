@@ -1,4 +1,4 @@
-var blueprint = require ('@onehilltech/blueprint')
+var blueprint = require ('@onehilltech/blueprint-mongodb')
   ;
 
 var schema = new blueprint.Schema({
