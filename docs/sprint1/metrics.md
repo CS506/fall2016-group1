@@ -5,16 +5,16 @@ These metrics are measured against the [baselined-requirements](./baselined-requ
 
 ## Requirements Phase
 
-Metric | Value
+Metric | Coverage
 --- | ---
-Understandability | [50% of requirements are understandable](./requirements-understandability-measurements.md)
-Testability | [55% of requirements are testable](./requirements-testability-measurements.md)
+Understandability | [50%](./requirements-understandability-measurements.md)
+Testability | [55%](./requirements-testability-measurements.md)
 Self-completeness | *Coming soon*
 
 
 ## Design Phase
 
-Metric | Value
+Metric | Coverage
 --- | ---
 Understandability | *Coming soon*
 Robustness | [50%](./design-robustness-measurements.md)
