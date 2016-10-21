@@ -1,4 +1,4 @@
-# Testability Measurements
+# Requirements Testability Measurements
 
 We define our metric for testability to be the percentage of detailed requirements that are testable. We will use three kinds of test methods in requirements testing (adapted from [Requirements Specification and Testing by Tor Stalhane](http://www.idi.ntnu.no/emner/tdt4242/foiler/3-2-Testability.ppt)):
 

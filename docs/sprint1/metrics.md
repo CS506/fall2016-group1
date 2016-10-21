@@ -7,8 +7,8 @@ These metrics are measured against the [baselined-requirements](./baselined-requ
 
 Metric | Value
 --- | ---
-Understandability | [50% of requirements are understandable](./understandability-measurements.md)
-Testability | [55% of requirements are testable](./testability-measurements.md)
+Understandability | [50% of requirements are understandable](./requirements-understandability-measurements.md)
+Testability | [55% of requirements are testable](./requirements-testability-measurements.md)
 Self-completeness | *Coming soon*
 
 
@@ -17,7 +17,7 @@ Self-completeness | *Coming soon*
 Metric | Value
 --- | ---
 Understandability | *Coming soon*
-Robustness | *Coming soon*
+Robustness | [50%](./design-robustness-measurements.md)
 Flexibility | *Coming soon*
 
 
