@@ -62,7 +62,7 @@ Requirement number | Checklist item 1 | Checklist item 2 | Checklist item 3 | Ch
 4.i.d.c. | No | No | Yes | Yes | P
 4.ii. | Yes | No | No | Yes | P
 4.ii.a. | No | No | No | No | NU
-4.ii.b. | No | NO | No | No | NU
+4.ii.b. | No | No | No | No | NU
 4.ii.c. | No | No | No | No | NU
 
 
