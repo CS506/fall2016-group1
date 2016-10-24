@@ -20,9 +20,11 @@ Provides both increased freedom when making decisions about the values of the de
 # Metrics:
 
 Let us represent the set of problems as P, the set of implementations as I(7). 
+
 A step in the process of software evolution can be represented as a mapping of the combination of the old problem p_old?P, the shifted problem p_shifted?P, and the old implementation i_old?I into the adjusted implementation i_adjusted?I.
+
 This mapping can thus be represented as the evolution function, a mathematical function E which maps each tuple <pold,pshifted,iold> to the adjusted implementation iadjusted:  
-Evolution function is a functional relation E such that 
+Evolution function is a functional relation E such that  
 E : P×P×I ? I 
 and E(p_old,p_shifted,i_old)=iadjusted only if i_old realizes p_old and i_adjusted realizes p_shifted. 
 Evolution step is a pair E=<<p_old,p_shifted,i_old>,E(p_old,p_shifted,i_old)>
