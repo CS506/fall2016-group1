@@ -25,8 +25,11 @@ A step in the process of software evolution can be represented as a mapping of t
 
 This mapping can thus be represented as the evolution function, a mathematical function E which maps each tuple <pold,pshifted,iold> to the adjusted implementation iadjusted:  
 Evolution function is a functional relation E such that  
-E : P×P×I ? I 
+
+                              E : P×P×I ? I 
+
 and E(p_old,p_shifted,i_old)=iadjusted only if i_old realizes p_old and i_adjusted realizes p_shifted. 
+
 Evolution step is a pair E=<<p_old,p_shifted,i_old>,E(p_old,p_shifted,i_old)>
 
 Note: Extensibility is one facet of flexibility, and so another way to measure flexibility, in part, is to make a list of reasonable additions to the application’s requirements and to evaluate the design’s ability to extend and cover them. 
