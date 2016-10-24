@@ -2,7 +2,9 @@
 
 According to Cormier et al., The ideal flexible system is one where all of the variables are (potentially) actively adaptable. 
 However, for complex systems, it is highly unlikely that all design variables will be capable of being adaptable.
+
 For this reason, robustness is an important aspect of a flexible system design.
+
 When developing a system for mass customization, flexibility is required because the consumer is specifying design requirements that the system must achieve; detailed dimensions for user interfaces may also be specified.
 
 # Mass Dimensional Flexibility: 
