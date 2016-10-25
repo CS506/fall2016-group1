@@ -53,9 +53,11 @@ Requirements | Handled by design? | Sufficiency%
 ### Login
 Design diagram |	Requirements Covered
 --- | :---:
-Activity diagram | 3(i,ii(b,c,d))
-Data flow model |	3(i,ii(b,d))
-State diagram |	3(ii(b,d))
+Activity diagram | 3.i
+ | 3.ii(b,c,d)
+Data flow model |	3.i
+ | 3.ii(b,d)
+State diagram |	3.ii(b,d)
 
 ### Register
 Design diagram |	Requirements Covered
