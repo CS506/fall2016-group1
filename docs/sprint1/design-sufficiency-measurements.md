@@ -4,7 +4,7 @@ Listing requirements help developers to know what to build. Developers and other
 
 *"Software Engineering, Modern Approaches 2nd Edition written by Eric J. Braude, John Wily & Sons"* says, sufficiency is a measure of how good design accommodates the requirements. Also, it gives a way to measure the sufficiency of a design as follows.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Sufficiency metric = Percentage of detailed requirements clearly accommodated by the design
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sufficiency metric = Percentage of detailed requirements clearly accommodated by the design
 
 ## Summary of Results
 
