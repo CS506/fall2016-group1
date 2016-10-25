@@ -8,7 +8,7 @@ Listing requirements help developers to know what to build. Developers and other
 
 ## Summary of Results
 
-* Sufficiency assured by the design diagrams: 56%
+#* Sufficiency assured by the design diagrams: 56%
 
 ## Complete Results
 
@@ -70,8 +70,7 @@ Data flow model |	2.i
  | 2.ii
  | 2.iii
  | 2.iv(a,b)
- | 2.v(b)
- 
+ | 2.v(b) 
 State diagram |	2.i
  | 2.ii
  | 2.iv(a,b)
