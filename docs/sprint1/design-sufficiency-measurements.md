@@ -4,11 +4,11 @@ Listing requirements help developers to know what to build. Developers and other
 
 *Software Engineering, Modern Approaches 2nd Edition written by Eric J. Braude, John Wily & Sons* says, sufficiency is a measure of how good design accommodates the requirements. Also, it gives a way to measure the sufficiency of a design as follows.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Sufficiency metric = Percentage of detailed requirements clearly accommodated by the design
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sufficiency metric = Percentage of detailed requirements clearly accommodated by the design
 
 ## Summary of Results
 
-Sufficiency assured by the design diagrams: 56%
+* Sufficiency assured by the design diagrams: 56%
 
 ## Complete Results
 
@@ -45,18 +45,17 @@ Requirements | Handled by design? | Sufficiency%
 4.ii.c | No	
 
 # Notes
-
 1.	Percentages have been rounded off to the previous nearest integer.
 2.	Total sufficiency of all the design diagrams is the average sufficiency percentage of each set of requirements.
 
-The following tables provide information about what are the requirements covered by our design models. The first column in every table tells the type of design diagram. The second column lists the requirements covered by the design.
+&nbsp;&nbsp;&nbsp;The following tables provide information about what are the requirements covered by our design models. The first column in every table tells the type of design diagram. The second column lists the requirements covered by the design.
 
 ### Login
 Design diagram |	Requirements Covered
 --- | :---:
-Activity diagram	3(i,ii(b,c,d))
-Data flow model	3(i,ii(b,d))
-State diagram	3(ii(b,d))
+Activity diagram | 3(i,ii(b,c,d))
+Data flow model |	3(i,ii(b,d))
+State diagram |	3(ii(b,d))
 
 ### Register
 Design diagram |	Requirements Covered
