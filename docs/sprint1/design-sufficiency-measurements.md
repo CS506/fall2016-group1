@@ -62,14 +62,28 @@ State diagram |	3.ii(b,d)
 ### Register
 Design diagram |	Requirements Covered
 --- | :---:
-Activity diagram |	2(i,iii,iv(a,b),v(b))
-Data flow model |	2(i,ii,iii,iv(a,b),v(b))
-State diagram |	2(i,ii,iv(a,b),v(b))
+Activity diagram |	2.i
+ | 2.iii
+ | 2.iv(a,b)
+ | 2.v(b)
+Data flow model |	2.i
+ | 2.ii
+ | 2.iii
+ | 2.iv(a,b)
+ | 2.v(b)
+ 
+State diagram |	2.i
+ | 2.ii
+ | 2.iv(a,b)
+ | 2.v(b)
+ 
 
 ### Use case diagram
 Design diagram |	Requirements Covered
 --- | :---:
-Use case Diagram |	1(i),2,3,4(i,ii)
-
+Use case Diagram |	1.i
+ | 2
+ | 3
+ | 4(i,ii)
 
 
