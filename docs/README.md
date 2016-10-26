@@ -14,7 +14,7 @@ Artifacts for a specific sprint can be found in the corresponding directory abov
 
 * Understandability
 * Robustness
-* Flexibility
+* Sufficiency
 
 ### Implementation Quality Characteristics
 *Coming soon*
