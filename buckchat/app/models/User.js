@@ -1,9 +1,9 @@
 var blueprint = require('@onehilltech/blueprint-mongodb');
 
 var schema = new blueprint.Schema({
-  name: {type: String, required: true, trim: true},
-  email: {type: String, required: true, trim: true},
-  username: {type: String, required: true, trim: true},
+  name: {type: String, lowercase: true, required: true, trim: true},
+  email: {type: String, lowercase: true, required: true, trim: true},
+  username: {type: String, lowercase: true, required: true, trim: true},
   password: {type: String, required: true, trim: true},
 });
 
