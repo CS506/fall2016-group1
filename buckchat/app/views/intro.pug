@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        title Buckchat - Broadcast messaging service!
+
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+
+    body
+        div.container
+            h1 Buckchat - Chat away!
+
+            p
+                | This is a prototype login page of our web application. The page is still under construction!
+                | It will be up and running soon!
+
+            form.form-horizontal(method='post', action='/intro')
+                div.form-group
+                    label.col-sm-2.control-label(for="name") Username
+                    div.col-sm-5
+                        input#name.form-control(type="text", name="name", placeholder="Type username here")
+                div.form-group
+                    label.col-sm-2.control-label(for="pass") Password
+                    div.col-sm-5
+                        input#pass.form-control(type="text", name="pass", placeholder="Type password here")
+
+                div.form-group
+                    div.col-sm-offset-2.col-sm-5
+                        button.btn.btn-default(type="submit") Login
+
+            - if (error)
+                p Are you kidding me??
+
+                blockquote #{error}!
