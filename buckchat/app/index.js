@@ -10,22 +10,8 @@ var winston       = require('winston')
 
 var expressApp = express();
 
-
-
 blueprint.Application (__dirname, function (err, app) {
   if (err) throw err;
-
-
-  // For cookies
-  expressApp.use(cookieParser());
-
-  expressApp.use(cookieSession({
-    name: 'session',
-    resave: true,
-    saveUninitialized: true,
-    keys: ['key1']
-  }));
-
 
   app.start(function(err) {
     if (err) throw err;
