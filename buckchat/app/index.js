@@ -5,12 +5,16 @@ var winston       = require('winston')
   , cookieParser  = require('cookie-parser')
   , cookieSession = require('cookie-session')
   , express       = require('express')
+  , passport      = require('passport-local')
   ;
 
 var expressApp = express();
 
+
+
 blueprint.Application (__dirname, function (err, app) {
   if (err) throw err;
+
 
   // For cookies
   expressApp.use(cookieParser());

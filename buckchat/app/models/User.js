@@ -1,6 +1,6 @@
-var blueprint = require('@onehilltech/blueprint-mongodb');
+var mongodb = require('@onehilltech/blueprint-mongodb');
 
-var schema = new blueprint.Schema({
+var schema = new mongodb.Schema({
   name: {type: String, lowercase: true, required: true, trim: true},
   email: {type: String, lowercase: true, required: true, trim: true},
   username: {type: String, lowercase: true, required: true, trim: true},
@@ -8,4 +8,4 @@ var schema = new blueprint.Schema({
 });
 
 const COLLECTION_NAME = 'user';
-module.exports = exports = blueprint.model(COLLECTION_NAME, schema);
+module.exports = exports = mongodb.model(COLLECTION_NAME, schema);
