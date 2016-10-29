@@ -7,7 +7,7 @@ module.exports = {
     post : {
       before : [passport.authenticate('local', {failureRedirect: '/login'})],
       action : 'LoginController@login'
-    },
+    }
   },
 
   '/logout': {
