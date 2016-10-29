@@ -10,7 +10,7 @@ blueprint.messaging.on ('app.init', function (app) {
   User = app.models.User;
 });
 
-module.exports = exports = {
+module.exports = {
   protocols : {
     http : {
       port: 5000

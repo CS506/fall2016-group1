@@ -12,8 +12,15 @@ blueprint.controller(IntroPageController);
 IntroPageController.prototype.login = function() {
   return function(req, res) {
 
-    console.log("Login successful!!");
-    console.log('User logged in: ' + req.user.id);
+    console.log("Proceeding with login.....");
+    
+    if (req.user) {
+      console.log('User logged in: ' + req.user.id);
+    } else {
+      console.log('req.user is not defined.');
+    }
+
+    res.render('welcome.pug');
     // res.redirect('/users/' + req.user.id);
   };
 };
