@@ -1,9 +1,7 @@
 var blueprint = require('@onehilltech/blueprint')
-  , util      = require('util')
-  , User      = require ('../models/User')
-  // , passport  = require('../plugins/auth')
-  // , passport  = require('passport')
   ;
+
+module.exports = IntroPageController;
 
 function IntroPageController() {
   blueprint.BaseController.call(this);
@@ -12,8 +10,6 @@ function IntroPageController() {
 blueprint.controller(IntroPageController);
 
 IntroPageController.prototype.login = function() {
-  var self = this;
-
   return function(req, res) {
 
     console.log("Login successful?!");
@@ -22,4 +18,14 @@ IntroPageController.prototype.login = function() {
   };
 };
 
-module.exports = exports = IntroPageController;
+
+/*
+ * Action responsible for completing the logout process. It will redirect
+ * the user to the login page.
+ */ 
+IntroPageController.prototype.logout = function () {
+  return function (req, res) {
+    req.logout ();
+    res.redirect ('/login');
+  }
+};

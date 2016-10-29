@@ -11,8 +11,8 @@ function initPassport (app) {
   passport.use (new LocalStrategy (opts, authorize));
 
   function authorize (username, password, done) {
+    console.log("Authorizing user!!!!!!!!!!!!!!!!!!!!!");
     User.findOne ({ username: username }, function (err, user) {
-      console.log("Authenticating user...");
       if (err) { return done (err); }
       if (!user) { return done (null, false); }
       if (user.verifyPassword (password)) { return done (null, false); }
