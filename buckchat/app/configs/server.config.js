@@ -31,13 +31,13 @@ module.exports = exports = {
       session: {  
         serializer: function (user, done) {
           /* convert user model to id */ 
-            callback(null, user.username);
+            done(null, user.username);
           },
         deserializer: function (id, done) {
           /* convert id to a user model */
           User.findOne({ username: id }, function (err, user) {
-            if (err) { return callback(err); }
-            callback(null, user);
+            if (err) { return done(err); }
+            done(null, user);
           });
         }
       }
