@@ -5,7 +5,7 @@ module.exports = {
   '/login' : {
     get  : { view   : 'intro.pug' },
     post : {
-      before: [passport.authenticate('local', {failureRedirect: '/login'})],
+      before : [passport.authenticate('local', {failureRedirect: '/login'})],
       action : 'LoginController@login'
     },
   },

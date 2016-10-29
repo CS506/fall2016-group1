@@ -12,7 +12,7 @@ blueprint.controller(IntroPageController);
 IntroPageController.prototype.login = function() {
   return function(req, res) {
 
-    console.log("Login successful?!");
+    console.log("Login successful!!");
     console.log('User logged in: ' + req.user.id);
     // res.redirect('/users/' + req.user.id);
   };
@@ -25,6 +25,7 @@ IntroPageController.prototype.login = function() {
  */ 
 IntroPageController.prototype.logout = function () {
   return function (req, res) {
+    console.log('Logging user out.');
     req.logout ();
     res.redirect ('/login');
   }
