@@ -2,10 +2,7 @@
 
 var winston       = require('winston')
   , blueprint     = require('@onehilltech/blueprint')
-  , cookieParser  = require('cookie-parser')
-  , cookieSession = require('cookie-session')
   , express       = require('express')
-  , passport      = require('passport-local')
   ;
 
 var expressApp = express();
