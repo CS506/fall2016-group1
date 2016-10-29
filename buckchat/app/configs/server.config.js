@@ -1,6 +1,14 @@
-var User = require ('../models/User')
+// var User = require ('../models/User')
+  // ;
+
+var blueprint = require ('@onehilltech/blueprint')
   ;
 
+var User;
+
+blueprint.messaging.on ('app.init', function (app) {
+  User = app.models.User;
+});
 
 module.exports = exports = {
   protocols : {
@@ -24,7 +32,8 @@ module.exports = exports = {
     session: {
       secret: 'secret',
       resave: false,
-      saveUninitialized: true
+      saveUninitialized: true,
+      cookie: { secure: false }  // set to true for https://
     },
 
     passport : { 
