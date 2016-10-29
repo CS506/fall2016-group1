@@ -19,4 +19,22 @@ function initPassport (app) {
       return done (null, user);
     });
   }
+
+
+  passport.serializeUser(function(user, done) {
+    /* convert user model to id */ 
+    console.log("serializing user (in init).........");
+    done(null, user.username);
+  });
+
+
+  passport.deserializeUser(function(id, done) {
+    /* convert id to a user model */
+    console.log("deserializing user (in init).........");
+    User.findOne({ username: id }, function (err, user) {
+      if (err) { return done(err); }
+      done(null, user);
+    });
+  });
+
 }
