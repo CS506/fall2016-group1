@@ -2,26 +2,10 @@
 
 var winston       = require('winston')
   , blueprint     = require('@onehilltech/blueprint')
-  , cookieParser  = require('cookie-parser')
-  , cookieSession = require('cookie-session')
-  , express       = require('express')
   ;
-
-var expressApp = express();
 
 blueprint.Application (__dirname, function (err, app) {
   if (err) throw err;
-
-  // For cookies
-  expressApp.use(cookieParser());
-
-  expressApp.use(cookieSession({
-    name: 'session',
-    resave: true,
-    saveUninitialized: true,
-    keys: ['key1']
-  }));
-
 
   app.start(function(err) {
     if (err) throw err;
