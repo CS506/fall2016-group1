@@ -34,7 +34,7 @@ html(lang="en")
 
                 blockquote #{error}!
 
-	    
+         
             form.form-horizontal(method='post', action='/register')
                 div.form-group
                     label.col-sm-2.control-label(for="register-name") Name
@@ -44,11 +44,11 @@ html(lang="en")
                     label.col-sm-2.control-label(for="register-email") Email
                     div.col-sm-5
                         input#register-email.forwordm-control(type="email", name="email", placeholder="Type email here")
-		div.form-group
+            div.form-group
                     label.col-sm-2.control-label(for="register-username") Username
                     div.col-sm-5
                         input#register-username.forwordm-control(type="text", name="username", placeholder="Type username here")
-		div.form-group
+            div.form-group
                     label.col-sm-2.control-label(for="register-password") Password
                     div.col-sm-5
                         input#register-password.forwordm-control(type="password", name="password", placeholder="Type password here")
