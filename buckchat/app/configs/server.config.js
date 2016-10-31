@@ -19,6 +19,7 @@ module.exports = {
 
   middleware : {
     validator  : { },
+
     bodyParser : {
       urlencoded : { extended: false },
       json : { }
@@ -29,11 +30,14 @@ module.exports = {
       immediate: true
     },
 
+    // session and passport sections based off of Blueprint.js tutorial at 
+    // https://github.com/onehilltech/blueprint/wiki/Tutorials%3AAuthentication%3ASession
+
     session: {
       secret: 'secret',
       resave: false,
       saveUninitialized: true,
-      cookie: { secure: false }  // set to true for https://
+      cookie: { secure: false }
     },
 
     passport : { 

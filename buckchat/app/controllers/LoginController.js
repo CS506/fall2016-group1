@@ -9,22 +9,20 @@ function IntroPageController() {
 
 blueprint.controller(IntroPageController);
 
+
+/*
+ * Action responsible for redirecting user to welcome page upon logging in.
+ */ 
 IntroPageController.prototype.login = function() {
   return function(req, res) {
-
-    console.log("Proceeding with login.....");
-    
-    if (req.user) {
-      console.log('User logged in: ' + req.user.id);
-    } else {
-      console.log('req.user is not defined.');
-    }
-
+    // At this point, user is authenticated.
+    // Redirect to the welcome view.
     res.render('welcome.pug');
-    // res.redirect('/users/' + req.user.id);
   };
 };
 
+// Logout functionality below is copied from Blueprint.js passport authentication 
+// tutorial at https://github.com/onehilltech/blueprint/wiki/Tutorials%3AAuthentication%3ASession
 
 /*
  * Action responsible for completing the logout process. It will redirect
