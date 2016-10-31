@@ -17,7 +17,7 @@ IntroPageController.prototype.login = function() {
   return function(req, res) {
     // At this point, user is authenticated.
     // Redirect to the welcome view.
-    res.render('welcome.pug');
+    res.render('welcome.pug', {name: req.user.name});
   };
 };
 
