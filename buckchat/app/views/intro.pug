@@ -17,13 +17,13 @@ html(lang="en")
 
             form.form-horizontal(method='post', action='/login')
                 div.form-group
-                    label.col-sm-2.control-label(for="username") Username
+                    label.col-sm-2.control-label(for="login-username") Username
                     div.col-sm-5
-                        input#username.form-control(type="text", name="username", placeholder="Type username here")
+                        input#login-username.form-control(type="text", name="username", placeholder="Type username here")
                 div.form-group
-                    label.col-sm-2.control-label(for="password") Password
+                    label.col-sm-2.control-label(for="login-password") Password
                     div.col-sm-5
-                        input#password.forwordm-control(type="password", name="password", placeholder="Type password here")
+                        input#login-password.forwordm-control(type="password", name="password", placeholder="Type password here")
 
                 div.form-group
                     div.col-sm-offset-2.col-sm-5
@@ -37,21 +37,21 @@ html(lang="en")
 	    
             form.form-horizontal(method='post', action='/register')
                 div.form-group
-                    label.col-sm-2.control-label(for="user[name]") Name
+                    label.col-sm-2.control-label(for="register-name") Name
                     div.col-sm-5
-                        input#name.form-control(type="text", name="user[name]", placeholder="Type full name here")
+                        input#register-name.form-control(type="text", name="name", placeholder="Type full name here")
                 div.form-group
-                    label.col-sm-2.control-label(for="user[email]") Email
+                    label.col-sm-2.control-label(for="register-email") Email
                     div.col-sm-5
-                        input#email.forwordm-control(type="email", name="user[email]", placeholder="Type email here")
+                        input#register-email.forwordm-control(type="email", name="email", placeholder="Type email here")
 		div.form-group
-                    label.col-sm-2.control-label(for="username") Username
+                    label.col-sm-2.control-label(for="register-username") Username
                     div.col-sm-5
-                        input#regusername.forwordm-control(type="text", name="user[username]", placeholder="Type username here")
+                        input#register-username.forwordm-control(type="text", name="username", placeholder="Type username here")
 		div.form-group
-                    label.col-sm-2.control-label(for="password") Password
+                    label.col-sm-2.control-label(for="register-password") Password
                     div.col-sm-5
-                        input#regpass.forwordm-control(type="password", name="user[password]", placeholder="Type password here")
+                        input#register-password.forwordm-control(type="password", name="password", placeholder="Type password here")
 
                 div.form-group
                     div.col-sm-offset-2.col-sm-5
