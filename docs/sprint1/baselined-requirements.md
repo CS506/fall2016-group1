@@ -9,8 +9,8 @@
         1. Username
         1. Password
     1. These form fields shall be subject to the data requirements in ***Section 4.i***.
-    1. The account creation form shall include a "Sign Up" button below the form fields.
-    1. When the user clicks the "Sign Up" button, the service shall validate the form field values.
+    1. The account creation form shall include a "Register" button below the form fields.
+    1. When the user clicks the "Register" button, the service shall validate the form field values.
         1. The service shall determine whether the form field values are consistent with the data requirements in ***Section 4.i***.
         1. If any form field value is inconsistent with the data requirements, the service shall display a warning message to the user and prevent the user from creating an account.
     1. If validation is successful, the service shall create an account for the user.
