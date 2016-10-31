@@ -35,3 +35,10 @@ IntroPageController.prototype.logout = function() {
     res.redirect('/login');
   }
 };
+
+
+IntroPageController.prototype.register = function() {
+  return function(req, res) {
+  // Nothing here yet
+  };
+};
