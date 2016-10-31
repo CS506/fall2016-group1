@@ -23,7 +23,7 @@ html(lang="en")
                 div.form-group
                     label.col-sm-2.control-label(for="password") Password
                     div.col-sm-5
-                        input#pass.forwordm-control(type="password", name="password", placeholder="Type password here")
+                        input#password.forwordm-control(type="password", name="password", placeholder="Type password here")
 
                 div.form-group
                     div.col-sm-offset-2.col-sm-5
@@ -31,5 +31,33 @@ html(lang="en")
 
             - if (error)
                 p Are you kidding me??
+
+                blockquote #{error}!
+
+	    
+            form.form-horizontal(method='post', action='/register')
+                div.form-group
+                    label.col-sm-2.control-label(for="user[name]") Name
+                    div.col-sm-5
+                        input#name.form-control(type="text", name="user[name]", placeholder="Type full name here")
+                div.form-group
+                    label.col-sm-2.control-label(for="user[email]") Email
+                    div.col-sm-5
+                        input#email.forwordm-control(type="email", name="user[email]", placeholder="Type email here")
+		div.form-group
+                    label.col-sm-2.control-label(for="username") Username
+                    div.col-sm-5
+                        input#regusername.forwordm-control(type="text", name="user[username]", placeholder="Type username here")
+		div.form-group
+                    label.col-sm-2.control-label(for="password") Password
+                    div.col-sm-5
+                        input#regpass.forwordm-control(type="password", name="user[password]", placeholder="Type password here")
+
+                div.form-group
+                    div.col-sm-offset-2.col-sm-5
+                        button.btn.btn-default(type="submit") Register
+
+            - if (error)
+                p One or more fields are invalid!
 
                 blockquote #{error}!
