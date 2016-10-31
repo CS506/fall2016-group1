@@ -1,6 +1,6 @@
 module.exports = exports = {
-  '/helloworld' : {
-    get  : { view   : 'helloworld.pug' },
-    post : { action : 'HelloWorldController@echoName'},
+  // Default router to direct user to intro page.
+  '/' : {
+    get  : { view   : 'intro.pug' }
   }
 };
