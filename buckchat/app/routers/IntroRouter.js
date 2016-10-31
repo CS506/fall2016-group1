@@ -1,12 +1,12 @@
 module.exports = exports = {
   '/intro' : {
     get  : { view   : 'intro.pug' },
-    post : { action : 'LoginController@login'},
+    post : { action : 'IntroPageController@login'},
   }
 
   '/register' : {
     get  : { view   : 'intro.pug' },
-    post : { action : 'RegisterController@register'},
+    post : { action : 'IntroPageController@register'},
   }
 
 };
