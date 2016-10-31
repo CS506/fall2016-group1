@@ -28,10 +28,10 @@ IntroPageController.prototype.login = function() {
  * Action responsible for completing the logout process. It will redirect
  * the user to the login page.
  */ 
-IntroPageController.prototype.logout = function () {
-  return function (req, res) {
+IntroPageController.prototype.logout = function() {
+  return function(req, res) {
     console.log('Logging user out.');
-    req.logout ();
-    res.redirect ('/login');
+    req.logout();
+    res.redirect('/login');
   }
 };

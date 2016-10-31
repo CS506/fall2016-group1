@@ -1,12 +1,12 @@
 // var User = require ('../models/User')
   // ;
 
-var blueprint = require ('@onehilltech/blueprint')
+var blueprint = require('@onehilltech/blueprint')
   ;
 
 var User;
 
-blueprint.messaging.on ('app.init', function (app) {
+blueprint.messaging.on('app.init', function (app) {
   User = app.models.User;
 });
 
@@ -42,16 +42,18 @@ module.exports = {
 
     passport : { 
       session: {  
-        serializer: function (user, done) {
+        serializer: function(user, done) {
           /* convert user model to id */ 
-          console.log("serializing user.........");
+          console.log("serializing user.");
           done(null, user.username);
         },
-        deserializer: function (id, done) {
+        deserializer: function(id, done) {
           /* convert id to a user model */
-          console.log("deserializing user.........");
+          console.log("deserializing user.");
           User.findOne({ username: id }, function (err, user) {
-            if (err) { return done(err); }
+            if (err) {
+              return done(err);
+            }
             done(null, user);
           });
         }
