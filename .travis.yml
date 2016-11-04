@@ -4,5 +4,7 @@ services:
   - mongodb
 
 install:
+  - npm install mocha -g
+  - npm install -g istanbul
   - cd buckchat
   - npm install
