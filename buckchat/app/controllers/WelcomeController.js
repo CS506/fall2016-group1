@@ -13,7 +13,7 @@ WelcomeController.prototype.displayPage = function() {
   var self = this;
 
   return function(req, res) {
-    console.log("Directing user to welcome page.");
+    return res.render('welcome.pug', {name: req.user.name});
   };
 };
 

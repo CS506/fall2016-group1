@@ -26,11 +26,11 @@ function initPassport(app) {
       }
       if (!user) {
         // No user returned -- invalid credentials
-        return done (null, false);
+        return done (null, false, {message : 'Invalid credentials'});
       }
       if (user.password != password) {
         // Wrong password -- invalid credentials
-        return done (null, false);
+        return done (null, false, {message : 'Invalid credentials'});
       }
       // Credentials valid
       return done (null, user);

@@ -6,8 +6,8 @@ function isLoggedIn (req, res, next) {
   if (req.isAuthenticated())
     return next();
 
-  // If not, redirect to the login page
-  res.redirect ('/login');
+  // If not, redirect to the intro page
+  res.redirect ('/intro');
 }
 
 // Restrict routes in the `buckchat` directory to logged in users only. 
