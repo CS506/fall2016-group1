@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "env NODE_ENV=test mocha --recursive tests/tests",
+    "test": "env NODE_ENV=test istanbul test _mocha -- --recursive tests",
     "start-server": "env NODE_ENV=production forever -o ./app/temp/logs/output.log -e ./app/temp/logs/error.log start ./app/index.js",
     "stop-server": "env NODE_ENV=production forever stop app/index.js"
   },
