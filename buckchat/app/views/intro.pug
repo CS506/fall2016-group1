@@ -1,0 +1,66 @@
+doctype html
+html(lang="en")
+    head
+        title Buckchat Messaging Service
+
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+
+    body
+        div.container
+            h1 Buckchat - Chat away!
+
+            p Please login or register with the Buckchat Messaging Service.
+
+            form.form-horizontal(method='post', action='/login')
+                fieldset
+
+                    legend Login
+
+                    if (loginError)
+                        p.alert.alert-danger Error: #{loginError}
+
+                    div.form-group
+                        label.col-sm-2.control-label(for="login-username") Username
+                        div.col-sm-5
+                            input#login-username.form-control(type="text", name="username", placeholder="Type username here")
+
+                    div.form-group
+                        label.col-sm-2.control-label(for="login-password") Password
+                        div.col-sm-5
+                            input#login-password.forwordm-control(type="password", name="password", placeholder="Type password here")
+
+                    div.form-group
+                        div.col-sm-offset-2.col-sm-5
+                            button.btn.btn-default(type="submit") Login
+
+
+         
+            form.form-horizontal(method='post', action='/register')
+                fieldset
+
+                    legend Register
+
+                    div.form-group
+                        label.col-sm-2.control-label(for="register-name") Name
+                        div.col-sm-5
+                            input#register-name.form-control(type="text", name="name", placeholder="Type full name here")
+
+                    div.form-group
+                        label.col-sm-2.control-label(for="register-email") Email
+                        div.col-sm-5
+                            input#register-email.forwordm-control(type="email", name="email", placeholder="Type email here")
+
+                    div.form-group
+                        label.col-sm-2.control-label(for="register-username") Username
+                        div.col-sm-5
+                            input#register-username.forwordm-control(type="text", name="username", placeholder="Type username here")
+                    div.form-group
+                        label.col-sm-2.control-label(for="register-password") Password
+                        div.col-sm-5
+                            input#register-password.forwordm-control(type="password", name="password", placeholder="Type password here")
+
+                    div.form-group
+                        div.col-sm-offset-2.col-sm-5
+                            button.btn.btn-default(type="submit") Register

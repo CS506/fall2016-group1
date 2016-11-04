@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "env NODE_ENV=test mocha --recursive tests/tests",
+    "test": "env NODE_ENV=test istanbul test _mocha -- --recursive tests",
     "start-server": "env NODE_ENV=production forever -o ./app/temp/logs/output.log -e ./app/temp/logs/error.log start ./app/index.js",
     "stop-server": "env NODE_ENV=production forever stop app/index.js"
   },
@@ -12,7 +12,9 @@
     "@onehilltech/blueprint": "^1.0.0",
     "@onehilltech/blueprint-mongodb": "^0.7.1",
     "chai": "^3.5.0",
+    "cookie-session": "^2.0.0-alpha.1",
     "mocha": "^3.1.2",
+    "passport-local": "^1.0.0",
     "superagent": "^2.3.0",
     "supertest": "^2.0.1"
   },
