@@ -1,5 +1,7 @@
 # Buckchat Messaging Service
 
+<img src="https://travis-ci.org/CS506/fall2016-group1.svg?branch=master" />
+
 Please put all artifacts besides source code in the `docs` directory in the appropriate sprint directory.
 
 ## Quick Links
