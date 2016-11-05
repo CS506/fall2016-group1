@@ -10,7 +10,7 @@ services:
 
 install:
   - npm install mocha -g
-  - npm install -g istanbul
+  - npm install istanbul -g
   - cd buckchat
   - npm install
 
