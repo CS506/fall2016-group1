@@ -18,7 +18,10 @@
     "superagent": "^2.3.0",
     "supertest": "^2.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "coveralls": "^2.11.14",
+    "mocha-lcov-reporter": "^1.2.0"
+  },
   "license": "Apache-2.0",
   "engines": {
     "node": ">=4.0.0",
