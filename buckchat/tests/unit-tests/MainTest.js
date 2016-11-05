@@ -1,13 +1,41 @@
 var blueprint = require('@onehilltech/blueprint')
   , request   = require('supertest')
   , expect    = require('chai').expect
+  , assert    = require('chai').assert
   , appPath   = require('../fixtures/appPath')
+  , User      = require('../../app/models/User.js')
   ;
 
 
+/*
+ * HELPER FUNCTIONS
+ * 
+ * These are helper functions below that involve cleanup work with the database.
+ * Your test cases may call these functions before/after test cases as needed.
+ */
+function insertUserDoc(done) {
+  // Insert a test user document in the database.
+  var user = new User({name: 'joe', email: 'j@gmail.com', username: 'jjj', password: 'mypass'});
+  user.save(function() {
+    done();
+  });
+}
+
+function removeUserDocs(done) {
+  // Remove all test user documents in the database.
+  User.find({name: 'joe'}).remove(function(err) {
+    done();
+  });
+}
+
+/*
+ * TEST CASES
+ *
+ * These are the actual test cases. They are logically grouped using "describe" blocks.
+ */
 describe('GeneralApplication', function() {
   before(function(done) {
-    blueprint.testing.createApplicationAndStart(appPath, done)
+    blueprint.testing.createApplicationAndStart(appPath, done);
   });
 
   // We group test cases in multiple levels of "describe" functions
@@ -17,14 +45,20 @@ describe('GeneralApplication', function() {
   //
   // The callback function on the "it()" function is what actually 
   // executes the test case.
+  //
+  // For help on understanding this testing framework: 
+  //   https://www.sitepoint.com/unit-test-javascript-mocha-chai/
 
   /*
    * Route for the root of the application
    *
    */
-  describe('/', function() {
+  describe('Testing web application root', function() {
     describe('GET', function() {
-      it('Should show the intro page with forms', function(done) {
+      // Use the it() function to create a test case. Each test case tests
+      // a specific behavior. Concatenate "it" with the description to get 
+      // the behavior that is being tested: "it should..."
+      it('should show the intro page with forms', function(done) {
         // Use supertest to make a request and check response.
         request(blueprint.app.server.app)
           .get('/')
@@ -35,7 +69,7 @@ describe('GeneralApplication', function() {
     });
 
     describe('POST', function() {
-      it('Should not be able to send post request', function(done) {
+      it('should not be able to send post request', function(done) {
         request(blueprint.app.server.app)
           .post('/')
           .expect(404, done);
@@ -44,30 +78,122 @@ describe('GeneralApplication', function() {
   });
 
   /*
+   * Route for /buckchat
+   *
+   */
+  describe('Testing blocker router at route /buckchat', function() {
+
+    // Test that the blocker router redirects the user since not logged in.
+
+    describe('GET', function() {
+      it('should redirect to intro page if user not logged in', function(done) {
+        request(blueprint.app.server.app)
+          .get('/buckchat/not-a-page')
+          .expect(302, done);
+      });
+    });
+
+    describe('POST', function() {
+      it('should redirect to intro page if user not logged in', function(done) {
+        request(blueprint.app.server.app)
+          .post('/buckchat/not-a-page')
+          .expect(302, done);
+      });
+    });
+  });
+
+  /*
    * Route for /login
    *
    */
-  describe('/login', function() {
+  describe('Testing Login feature...', function() {
     describe('GET', function() {
-      it('Should show the intro page with forms', function(done) {
+      it('should show the intro page with forms', function(done) {
         request(blueprint.app.server.app)
           .get('/login')
           .expect(200, done);
       });
     });
 
-    describe('POST', function() {
-      it('Should fail to log the user in', function(done) {
+    describe('POST - no account yet...', function() {
+
+      // We can have multiple it() test cases within a single describe block.
+
+      it('should fail to login with empty username and empty password', function(done) {
         request(blueprint.app.server.app)
           .post('/login')
-          // Pass form data with the POST request. This mimmicks the user
+          // Pass form data with the POST request. This mimics the user
           // actually filling out and submitting the login form.
           .send({username: '', password: ''})
           // Expect 401 not authorized error
           .expect(401, done)
       });
+
+      it('should fail to login with empty username', function(done) {
+        request(blueprint.app.server.app)
+          .post('/login')
+          .send({username: '', password: 'anything'})
+          // Expect 401 not authorized error
+          .expect(401, done)
+      });
+
+      it('should fail to login with empty password', function(done) {
+        request(blueprint.app.server.app)
+          .post('/login')
+          .send({username: 'anything', password: ''})
+          // Expect 401 not authorized error
+          .expect(401, done)
+      });
+
+      it('should fail to login with invalid credentials', function(done) {
+        request(blueprint.app.server.app)
+          .post('/login')
+          .send({username: 'NotInTheDatabase', password: 'NotInTheDatabase'})
+          // Expect 401 not authorized error
+          .expect(401, done)
+      });
+    });
+
+
+    describe('POST - account created', function() {
+
+
+      before(function(done) {
+        insertUserDoc(done);
+      });
+
+
+      it('should succeed in logging in', function(done) {
+        request(blueprint.app.server.app)
+          .post('/login')
+          .send({username: 'jjj', password: 'mypass'})
+          .expect(200, done)
+      });
+
+      it('should be able to visit /buckchat/welcome once logged in');
+
+      after(removeUserDocs);
+
     });
   });
 
+  /*
+   * Route for /register
+   * 
+   */
+  describe('Testing register feature', function() {
+    describe('POST', function() {
+      it('should create an account if all user data is valid', function(done) {
+        request(blueprint.app.server.app)
+          .get('/register')
+          .send({name: 'joe', email: 'j@gmail.com', username: 'jjj', password: 'mypass'})
+          .expect(200, done);
+      });
+    });
+
+    // Remove all test docs inserted into the database (with name 'joe').
+    after(removeUserDocs);
+
+  });
 
 });
