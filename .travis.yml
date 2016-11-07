@@ -1,0 +1,21 @@
+dist: trusty
+
+language: node_js 
+
+node_js:
+  - "6"
+
+services:
+  - mongodb
+
+install:
+  - npm install mocha -g
+  - npm install istanbul -g
+  - cd buckchat
+  - npm install
+
+script:
+  - npm test --coverage
+
+after_script:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js

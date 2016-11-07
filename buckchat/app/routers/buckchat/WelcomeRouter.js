@@ -1,5 +1,5 @@
 module.exports = exports = {
-  '/welcome' : {
-    get  : { action  : 'IntroPageController@login'}
-  }
+    '/welcome' : {
+        get  : { action  : 'WelcomeController@displayPage'}
+    }
 };

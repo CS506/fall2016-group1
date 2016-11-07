@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "env NODE_ENV=test mocha --recursive tests/tests",
+    "test": "env NODE_ENV=test istanbul test _mocha -- --recursive tests",
     "start-server": "env NODE_ENV=production forever -o ./app/temp/logs/output.log -e ./app/temp/logs/error.log start ./app/index.js",
     "stop-server": "env NODE_ENV=production forever stop app/index.js"
   },
@@ -18,7 +18,10 @@
     "superagent": "^2.3.0",
     "supertest": "^2.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "coveralls": "^2.11.14",
+    "mocha-lcov-reporter": "^1.2.0"
+  },
   "license": "Apache-2.0",
   "engines": {
     "node": ">=4.0.0",

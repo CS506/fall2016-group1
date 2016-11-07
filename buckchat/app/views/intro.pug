@@ -18,6 +18,9 @@ html(lang="en")
 
                     legend Login
 
+                    if (loginError)
+                        p.alert.alert-danger Error: #{loginError}
+
                     div.form-group
                         label.col-sm-2.control-label(for="login-username") Username
                         div.col-sm-5
@@ -32,10 +35,6 @@ html(lang="en")
                         div.col-sm-offset-2.col-sm-5
                             button.btn.btn-default(type="submit") Login
 
-            - if (error)
-                p Are you kidding me??
-
-                blockquote #{error}!
 
          
             form.form-horizontal(method='post', action='/register')
