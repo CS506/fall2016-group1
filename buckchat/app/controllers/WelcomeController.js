@@ -10,6 +10,8 @@ function WelcomeController() {
 blueprint.controller(WelcomeController);
 
 WelcomeController.prototype.displayPage = function() {
+    var self = this;
+
     return function(req, res) {
         return res.render('welcome.pug', {name: req.user.name});
     };
