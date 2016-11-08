@@ -39,8 +39,6 @@ describe('GeneralApplication', function() {
         blueprint.testing.createApplicationAndStart(appPath, done);
     });
 
-    // beforeEach(function () {
-    // });
 
     // We group test cases in multiple levels of "describe" functions
     // simply for good organization. The first argument of each "describe"
@@ -171,7 +169,7 @@ describe('GeneralApplication', function() {
             before(function(done) {
                 // Initialize session (using supertest-session) for testing login.
                 loginSession = session(blueprint.app.server.app);
-                // Insert test doc into the databse.
+                // Insert test doc into the database.
                 insertUserDoc(done);
             });
 
