@@ -28,3 +28,10 @@ Metric | Coverage
 Flexibility | *coming soon* 
 Robustness | [69%](./implementation-robustness-measurements.md)
 Sufficiency | *coming soon*
+
+
+## Testing Phase
+
+Metric | Coverage
+--- | :---:
+Code coverage | *[coming soon](https://coveralls.io/github/CS506/fall2016-group1?branch=master)*
