@@ -16,3 +16,4 @@ Here are some standards we expect each member of the group to adhere to while wo
 * Indentation shall be 4 spaces.
 * Nested blocks shall be properly indented (for both HTML and JavaScript).
 * Source code shall be properly documented with comments *(to be defined as a team)*.
+* **Consistency is key!** If you have a space after a comma in function arguments, then maintain that standard. If you don't have a space between the function name and parenthesized argument list, then maintain that standard. Stick to either single quotes or double quotes for strings.
