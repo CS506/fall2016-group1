@@ -1,6 +1,6 @@
 var blueprint = require('@onehilltech/blueprint')
     , util    = require('util')
-    , User    = require ('../models/User');
+    , User    = require('../models/User');
     ;
 
 function WelcomeController() {
