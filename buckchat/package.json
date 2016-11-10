@@ -9,14 +9,15 @@
     "stop-server": "env NODE_ENV=production forever stop app/index.js"
   },
   "dependencies": {
-    "@onehilltech/blueprint": "1.1.1",
+    "@onehilltech/blueprint": "^1.0.0",
     "@onehilltech/blueprint-mongodb": "^0.7.1",
     "chai": "^3.5.0",
     "cookie-session": "^2.0.0-alpha.1",
     "mocha": "^3.1.2",
     "passport-local": "^1.0.0",
     "superagent": "^2.3.0",
-    "supertest": "^2.0.1"
+    "supertest": "^2.0.1",
+    "supertest-session": "^2.0.1"
   },
   "devDependencies": {
     "coveralls": "^2.11.14",
