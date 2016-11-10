@@ -9,7 +9,7 @@
     "stop-server": "env NODE_ENV=production forever stop app/index.js"
   },
   "dependencies": {
-    "@onehilltech/blueprint": "1.1.1",
+    "@onehilltech/blueprint": "^1.0.0",
     "@onehilltech/blueprint-mongodb": "^0.7.1",
     "chai": "^3.5.0",
     "cookie-session": "^2.0.0-alpha.1",
