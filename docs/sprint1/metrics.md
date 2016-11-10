@@ -23,4 +23,8 @@ Sufficiency | [56%](./design-sufficiency-measurements.md)
 
 ## Implementation Phase
 
-*Coming soon*
+Metric | Coverage
+--- | :---:
+Flexibility | *coming soon* 
+Robustness | *coming soon*
+Sufficiency | *coming soon*
