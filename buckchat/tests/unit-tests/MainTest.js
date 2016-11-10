@@ -200,6 +200,23 @@ describe('GeneralApplication', function() {
                     .expect(404, done);
             });
 
+            describe('Logout', function() {
+
+                it('should succeed to log the user out', function(done) {
+                    loginSession
+                        .get('/logout')
+                        // Expect a 302 Found status since logout() redirects to the root of the site
+                        .expect(302, done);
+                });
+
+                it('should redirect to intro page when requesting page under /buckchat when logged out', function(done) {
+                    loginSession
+                        .get('/buckchat/not-a-page')
+                        .expect(302, done);
+                });
+            });
+
+
 
             after(removeUserDocs);
 
