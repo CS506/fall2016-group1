@@ -14,7 +14,7 @@ Engineering: Modern Approaches*<sup>1</sup>. We define robustness, *R*, of imple
 
 where:
 
- * sum of robustness = &sum;<sub>all methods</sub> (degree of method's robustness *d<sub>i</subl>*)
+ * Sum of robustness = &sum;<sub>all methods</sub> (degree of method's robustness *d<sub>i</subl>*)
  * We understand a *method* to be a logical block of code that implements a single functionality (e.g. a function in a controller).
 
 A method's robustness (*d<sub>i</subl>*) can be one of the following values:
@@ -26,6 +26,33 @@ Value | Explanation
 1 | Complete robustness. All anomalous input is handled and appropriate error messages displayed to the user. Data stores remain in consistent states.
 
 Therefore, *R* &isin; [0,1], with 0 meaning no robustness and 1 meaning complete robustness.
+
+Informally, to measure degree of robustness, we examine the assumptions that a 
+method makes (its *preconditions*) and assess "whether the method allows a 
+reasonable recovery if the precondition fails" (Braude, 2011, p. 588).
+
+
+## Summary of Results
+
+ * Sum of robustness: 5.5
+ * Number of methods: 8
+ * ***Robustness metric (R): 69%***
+
+## Complete Results
+
+The table lists each method and its degree of robustness.
+
+Method | Degree of robustness
+--- | ---
+Intro view | 1
+Welcome view | 0
+IntroPageController.login() function | 1
+IntroPageController.logout() function | 1
+IntroPageController.register() function | 0.5
+WelcomeController.displayPage() function | 0
+isLoggedIn() function | 1
+initPassport() > authorize() function | 1
+
 
 ---
 <sup>1</sup>Braude, E. J., & Bernstein, M. E. (2011). Software Engineering: Modern Approaches 
