@@ -53,7 +53,7 @@ html(lang="en")
                     div.form-group
                         label.col-sm-2.control-label(for="register-name") Name
                         div.col-sm-5
-                            input#register-name.form-control(type="text", name="name", placeholder="Type full name here (1-30 characters)",pattern="[a-zA-Z]{1,30}",title="Must contain 1 to 30 alphabets only")
+                            input#register-name.form-control(type="text", name="name", placeholder="Type full name here (1-30 characters)",required,pattern="[a-zA-Z]{1,30}",title="Must contain 1 to 30 alphabets only")
 
                     div.form-group
                         label.col-sm-2.control-label(for="register-email") Email
@@ -63,11 +63,11 @@ html(lang="en")
                     div.form-group
                         label.col-sm-2.control-label(for="register-username") Username
                         div.col-sm-5
-                            input#register-username.form-control(type="text", name="username", placeholder="Type username here (3-15 characters)",pattern="[a-zA-Z0-9]{3,15}",title="Must contain 3 to 15 alphanumerals only")
+                            input#register-username.form-control(type="text", name="username", placeholder="Type username here (3-15 characters)",required,pattern="[a-zA-Z0-9]{3,15}",title="Must contain 3 to 15 alphanumerals only")
                     div.form-group
                         label.col-sm-2.control-label(for="register-password") Password
                         div.col-sm-5
-                            input#register-password.form-control(type="password", name="password", placeholder="Type password here (6-15 alphanumeric charecters)",pattern="[a-zA-Z0-9]{6,12}",title="Must contain 6 to 12 alphanumerals only")
+                            input#register-password.form-control(type="password", name="password", placeholder="Type password here (6-15 alphanumeric charecters)",required,pattern="[a-zA-Z0-9]{6,12}",title="Must contain 6 to 12 alphanumerals only")
 
                     div.form-group
                         div.col-sm-offset-2.col-sm-5
