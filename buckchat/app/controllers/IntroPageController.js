@@ -1,6 +1,7 @@
 var blueprint   = require('@onehilltech/blueprint')
     , passport  = require('passport')
-    , User      = require ('../models/User');
+    , User      = require ('../models/User')
+    , errors = require('validator')
     ;
 
 module.exports = IntroPageController;
@@ -83,12 +84,12 @@ IntroPageController.prototype.register = function() {
       //Assigning values to model variables  
       var user1 = new User({name: registerName,email: registerEmail,username: registerUsername,password: registerPassword});
       user1.save();
-      console.log('User successfully registered');
-      return res.render('welcome.pug');
+      return res.render('intro.pug',{successMessage: 'Login with your credentials'});
       }
 
       //Indicating form values are present already
       return res.render('intro.pug',{registerError: 'User exists already'});
     });
+
   };
 };
