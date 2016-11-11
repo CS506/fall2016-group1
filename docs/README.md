@@ -1,6 +1,6 @@
 # Documents
 
-Artifacts for a specific sprint can be found in the corresponding directory above. This page lists general information about the twitter-like service named "Buckchat".
+Artifacts for a specific sprint can be found in the corresponding directory above. This page lists general information about the Buckchat Messaging Service.
 
 ## Quality Characteristics
 
