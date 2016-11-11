@@ -10,7 +10,7 @@ is said to be flexible.
 We derive our metric for flexibility from a discussion in the textbook *Software 
 Engineering: Modern Approaches*<sup>1</sup>. There is no direct way to measure the
 degree of flexibility but there are attributes which can be measured in order to come
-to a conclision about the degree of flexibility of our implementation. The attributes
+to a conclusion about the degree of flexibility of our implementation. The attributes
 are as shown below:
 
 Attribute | Reason | Metric
@@ -32,7 +32,7 @@ Below are the results obtained by measuring the above attributes using their spe
 
  * Number of methods: 8
  * Number of methods flexible: 8
- * ***Flexibility metric (R): 100% (See Observations)***
+ * ***Flexibility metric: 100% (See Observations)***
 
 ## Complete Results
 
