@@ -14,7 +14,7 @@ to a conclision about the degree of flexibility of our implementation. The attri
 are as shown below:
 
 Attribute | Reason | Metric
---- | ---
+--- | --- | ---
 Document precisely and thoroughly | Cannot adapt code that you don't understand | Percentage of comment lines
 Name constants | Understandability | Percentage of numerals with names
 Hide variables and methods where possible | Redusing complexity increases understanding | Methods with unusually high or low method size(See Note 1)
