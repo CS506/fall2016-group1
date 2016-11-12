@@ -21,9 +21,6 @@ html(lang="en")
                     if (loginError)
                         p.alert.alert-danger Error: #{loginError}
 
-                    if (successMessage)
-                        p User registration successfull!
-                        p.alert.alert-success Congrats: #{successMessage}
 
                     div.form-group
                         label.col-sm-2.control-label(for="login-username") Username
@@ -46,13 +43,15 @@ html(lang="en")
 
                     legend Register
 
-                    if (registerError)
-                        p One or more fields are invalid!
-                        p.alert.alert-danger Error: #{registerError}
+                    //- Successful registration message.
+                    if (successMessage)
+                        p.alert.alert-success #{successMessage}
 
-                    if (validationError)
-                        p Please Enter valid form values!
-                        p.alert.alert-danger #{validationError}
+                    //- Register error of any type (fields didn't pass validation, account already exists, etc.)
+                    if (registerError)
+                        div.alert.alert-danger
+                            p One or more fields are invalid! 
+                            p Error: #{registerError}
 
                     div.form-group
                         label.col-sm-2.control-label(for="register-name") Name

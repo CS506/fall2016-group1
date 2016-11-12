@@ -87,11 +87,11 @@ IntroPageController.prototype.register = function() {
         //Validating with respect to model schema
         user1.validate(function(error) {
         if(error) {
-          return res.render('intro.pug',{validationError: error});
+          return res.render('intro.pug',{registerError: error});
         }
         else {
           user1.save();
-          return res.render('intro.pug',{successMessage: 'Login with your credentials'});
+          return res.render('intro.pug',{successMessage: 'User registration successfull! Now login with your credentials above.'});
         }
         });
       }
