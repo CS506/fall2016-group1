@@ -65,42 +65,41 @@ IntroPageController.prototype.logout = function() {
 
 
 IntroPageController.prototype.register = function() {
-  return function(req, res) {
+    return function(req, res) {
 
-    // Saving form details in local variables
-    var registerEmail = req.body.email;
-    var registerUsername = req.body.username;
-    var registerName = req.body.name;
-    var registerPassword = req.body.password;
+        // Saving form details in local variables
+        var registerEmail = req.body.email;
+        var registerUsername = req.body.username;
+        var registerName = req.body.name;
+        var registerPassword = req.body.password;
 
-    //Checking for user exists already or not
-    User.findOne({ $or: [ { email: registerEmail }, { username: registerUsername }]},function(err,doc) {
-      //Error Handling
-      if(err) {
-        return handleError(err);
-      }
+        // Checking for user exists already or not
+        User.findOne({ $or: [ { email: registerEmail }, { username: registerUsername }]}, function(err, doc) {
+            // Error Handling
+            if (err) {
+                return handleError(err);
+            }
 
-      //Indicating availability of username and email
-      if(doc === null) {  
-        //Assigning values to model variables  
-        var user1 = new User({name: registerName,email: registerEmail,username: registerUsername,password: registerPassword});
-        //Validating with respect to model schema
-        user1.validate(function(error) {
-        if(error) {
-          return res.render('intro.pug',{registerError: error});
-        }
-        else {
-          user1.save();
-          return res.render('intro.pug',{successMessage: 'User registration successfull! Now login with your credentials above.'});
-        }
+            // Indicating availability of username and email
+            if (doc === null) {
+                // Assigning values to model variables  
+                var user1 = new User({name: registerName, email: registerEmail, username: registerUsername, password: registerPassword});
+
+                // Validating with respect to model schema
+                user1.validate(function(error) {
+                    if (error) {
+                        return res.render('intro.pug', {registerError: error});
+                    } else {
+                        user1.save();
+                        return res.render('intro.pug', {successMessage: 'User registration successfull! Now login with your credentials above.'});
+                    }
+                });
+            }
+
+            // Indicating form values are present already
+            else {
+                return res.render('intro.pug', {registerError: 'User exists already'});
+            }
         });
-      }
-
-      //Indicating form values are present already
-      else {
-        return res.render('intro.pug',{registerError: 'User exists already'});
-      }
-    });
-
-  };
+    };
 };
