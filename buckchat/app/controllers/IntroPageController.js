@@ -75,20 +75,31 @@ IntroPageController.prototype.register = function() {
 
     //Checking for user exists already or not
     User.findOne({ $or: [ { email: registerEmail }, { username: registerUsername }]},function(err,doc) {
+      //Error Handling
       if(err) {
-      return handleError(err);
+        return handleError(err);
       }
 
       //Indicating availability of username and email
       if(doc === null) {  
-      //Assigning values to model variables  
-      var user1 = new User({name: registerName,email: registerEmail,username: registerUsername,password: registerPassword});
-      user1.save();
-      return res.render('intro.pug',{successMessage: 'Login with your credentials'});
+        //Assigning values to model variables  
+        var user1 = new User({name: registerName,email: registerEmail,username: registerUsername,password: registerPassword});
+        //Validating with respect to model schema
+        user1.validate(function(error) {
+        if(error) {
+          return res.render('intro.pug',{registerError: 'Empty form values not allowed'});
+        }
+        else {
+          user1.save();
+          return res.render('intro.pug',{successMessage: 'Login with your credentials'});
+        }
+        });
       }
 
       //Indicating form values are present already
-      return res.render('intro.pug',{registerError: 'User exists already'});
+      else {
+        return res.render('intro.pug',{registerError: 'User exists already'});
+      }
     });
 
   };
