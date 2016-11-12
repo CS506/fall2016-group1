@@ -87,7 +87,7 @@ IntroPageController.prototype.register = function() {
         //Validating with respect to model schema
         user1.validate(function(error) {
         if(error) {
-          return res.render('intro.pug',{registerError: 'Empty form values not allowed'});
+          return res.render('intro.pug',{validationError: error});
         }
         else {
           user1.save();
