@@ -50,6 +50,10 @@ html(lang="en")
                         p One or more fields are invalid!
                         p.alert.alert-danger Error: #{registerError}
 
+                    if (validationError)
+                        p Please Enter valid form values!
+                        p.alert.alert-danger #{validationError}
+
                     div.form-group
                         label.col-sm-2.control-label(for="register-name") Name
                         div.col-sm-5
@@ -58,7 +62,7 @@ html(lang="en")
                     div.form-group
                         label.col-sm-2.control-label(for="register-email") Email
                         div.col-sm-5
-                            input#register-email.form-control(type="email", name="email", placeholder="Type email here")
+                            input#register-email.form-control(type="email", name="email", placeholder="Type email here",required)
 
                     div.form-group
                         label.col-sm-2.control-label(for="register-username") Username
