@@ -191,6 +191,121 @@ describe('GeneralApplication', function() {
             });
         });
 
+        describe('POST - not registered...', function() {
+
+            // We can have multiple it() test cases within a single describe block.
+
+            it('should fail to register with empty form values', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: '', password: '', email: '', name: ''})
+                    // Expect 400 - conflict with model design
+                    .expect(400, done)
+            });
+
+            it('should fail to register with empty username', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: '', password: 'anything', email: 'raghav4494@gmail.com', name: 'raghavendran'})
+                    // Expect 400 - conflict with model design
+                    .expect(400, done)
+            });
+
+            it('should fail to register with empty password', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'raghav4494', password: '', email: 'raghav4494@gmail.com', name: 'raghavendran'})
+                    // Expect 400 - conflict with model design
+                    .expect(400, done)
+            });
+
+            it('should fail to register with empty name', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'raghav4494', password: 'anything', email: 'raghav4494@gmail.com', name: ''})
+                    // Expect 400 - conflict with model design
+                    .expect(400, done)
+            });
+
+            it('should fail to register with empty email', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'raghav4494', password: 'anything', email: '', name: 'raghavendran'})
+                    // Expect 400 - conflict with model design
+                    .expect(400, done)
+            });
+
+            it('should fail to register with already existing username', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'raghav4494', email: 'raghav@gmail.com', name: 'raghavendran', password: 'qwerty123'})
+                    // Expect 400 - User exists already
+                    .expect(400, done)
+            });
+
+            it('should fail to register with already existing email id', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'raghav', email: 'raghav4494@gmail.com', name: 'raghavendran', password: 'qwerty123'})
+                    // Expect 400 - User exists already
+                    .expect(400, done)
+            });
+
+            it('should fail to register with already existing username and email id', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'raghav4494', email: 'raghav4494@gmail.com', name: 'raghavendran', password: 'qwerty123'})
+                    // Expect 400 - User exists already
+                    .expect(400, done)
+            });
+        });
+
+        describe('POST - validation issues...', function() {
+
+            // We can have multiple it() test cases within a single describe block.
+
+            it('should fail to register with password less than 6 characters', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'raghav4494', password: 'ragh', email: 'raghav4494@gmail.com', name: 'Raghavendran'})
+                    // Expect 400 - schema attribute's properties are not met
+                    .expect(400, done)
+            });
+
+            it('should fail to register with password more than 12 characters', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'raghav4494', password: 'raghavendran4494', email: 'raghav4494@gmail.com', name: 'Raghavendran'})
+                    // Expect 400 - schema attribute's properties are not met
+                    .expect(400, done)
+            });
+
+            it('should fail to register with username less than 3 characters', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'ra', password: 'raghav4494', email: 'raghav4494@gmail.com', name: 'Raghavendran'})
+                    // Expect 400 - schema attribute's properties are not met
+                    .expect(400, done)
+            });
+
+            it('should fail to register with username more than 15 characters', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'raghavendran4494', password: 'raghav4494', email: 'raghav4494@gmail.com', name: 'Raghavendran'})
+                    // Expect 400 - schema attribute's properties are not met
+                    .expect(400, done)
+            });
+
+            it('should fail to register with name more than 30 characters', function(done) {
+                request(blueprint.app.server.app)
+                    .post('/register')
+                    .send({username: 'raghav4494', password: 'raghav4494', email: 'raghav4494@gmail.com', name: 'RaghavendranRaghavendranRaghavendran'})
+                    // Expect 400 - schema attribute's properties are not met
+                    .expect(400, done)
+            });
+
+        });
+
         // Remove all test docs inserted into the database (with name 'joe').
         after(removeUserDocs);
 

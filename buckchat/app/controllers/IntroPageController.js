@@ -88,6 +88,7 @@ IntroPageController.prototype.register = function() {
                 // Validating with respect to model schema
                 user.validate(function(error) {
                     if (error) {
+                        res.status(400);
                         return res.render('intro.pug', {registerError: error});
                     } else {
                         user.save();
@@ -98,6 +99,7 @@ IntroPageController.prototype.register = function() {
 
             // Indicating form values are present already
             else {
+                 res.status(400);
                 return res.render('intro.pug', {registerError: 'User exists already'});
             }
         });
