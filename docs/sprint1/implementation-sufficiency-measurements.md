@@ -15,7 +15,7 @@ In order to measure the sufficiency of implemementation, we examine the detailed
 
 * Number of detailed requirements implemented: 21
 * Number of detailed requirements in design: 24
-* ***Suffiency metric (S): %***88
+* ***Sufficiency metric (S): %***88
 
 ## Complete Results
 
