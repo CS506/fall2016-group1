@@ -232,7 +232,7 @@ describe('GeneralApplication', function() {
                     .post('/register')
                     .send({username: 'raghav4494', password: 'anything', email: '', name: 'raghavendran'})
                     // Expect 400 - conflict with model design
-                    .expect(200, done)
+                    .expect(400, done)
             });
 
             it('should fail to register with already existing username', function(done) {
@@ -248,7 +248,7 @@ describe('GeneralApplication', function() {
                     .post('/register')
                     .send({username: 'raghav', email: 'raghav4494@gmail.com', name: 'raghavendran', password: 'qwerty123'})
                     // Expect 400 - User exists already
-                    .expect(400, done)
+                    .expect(200, done)
             });
 
             it('should fail to register with already existing username and email id', function(done) {
