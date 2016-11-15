@@ -99,7 +99,7 @@ IntroPageController.prototype.register = function() {
 
             // Indicating form values are present already
             else {
-                 res.status(400);
+                 res.status(409);
                 return res.render('intro.pug', {registerError: 'User exists already'});
             }
         });

@@ -166,7 +166,7 @@ describe('GeneralApplication', function() {
             it('should succeed in logging in', function(done) {
                 request(blueprint.app.server.app)
                     .post('/login')
-                    .send({username: 'jjj', password: 'mypass'})
+                    .send({username: 'raghav4494', password: 'qwerty123'})
                     .expect(200, done)
             });
 
@@ -186,7 +186,7 @@ describe('GeneralApplication', function() {
             it('should create an account if all user data is valid', function(done) {
                 request(blueprint.app.server.app)
                     .get('/register')
-                    .send({name: 'joe', email: 'j@gmail.com', username: 'jjj', password: 'mypass'})
+                    .send({name: 'raghavendran', email: 'raghav4494@gmail.com', username: 'raghav4494', password: 'qwerty123'})
                     .expect(200, done);
             });
         });
@@ -206,7 +206,7 @@ describe('GeneralApplication', function() {
             it('should fail to register with empty username', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: '', password: 'anything', email: 'raghav4494@gmail.com', name: 'raghavendran'})
+                    .send({username: '', password: 'qwerty123', email: 'raghav44945@gmail.com', name: 'raghavendran'})
                     // Expect 400 - conflict with model design
                     .expect(400, done)
             });
@@ -214,7 +214,7 @@ describe('GeneralApplication', function() {
             it('should fail to register with empty password', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghav4494', password: '', email: 'raghav4494@gmail.com', name: 'raghavendran'})
+                    .send({username: 'raghav44945', password: '', email: 'raghav44945@gmail.com', name: 'raghavendran'})
                     // Expect 400 - conflict with model design
                     .expect(400, done)
             });
@@ -222,7 +222,7 @@ describe('GeneralApplication', function() {
             it('should fail to register with empty name', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghav4494', password: 'anything', email: 'raghav4494@gmail.com', name: ''})
+                    .send({username: 'raghav44945', password: 'qwerty123', email: 'raghav44945@gmail.com', name: ''})
                     // Expect 400 - conflict with model design
                     .expect(400, done)
             });
@@ -230,33 +230,36 @@ describe('GeneralApplication', function() {
             it('should fail to register with empty email', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghav4494', password: 'anything', email: '', name: 'raghavendran'})
+                    .send({username: 'raghav44945', password: 'qwerty123', email: '', name: 'raghavendran'})
                     // Expect 400 - conflict with model design
                     .expect(400, done)
             });
+        });
+
+        describe('POST - not successfull...', function() {
 
             it('should fail to register with already existing username', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghav4494', email: 'raghav@gmail.com', name: 'raghavendran', password: 'qwerty123'})
-                    // Expect 400 - User exists already
-                    .expect(200, done)
+                    .send({username: 'raghav4494', email: 'abcd@gmail.com', name: 'raghavendran', password: 'qwerty123'})
+                    // Expect 409 - User exists already
+                    .expect(409, done)
             });
 
             it('should fail to register with already existing email id', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghav', email: 'raghav4494@gmail.com', name: 'raghavendran', password: 'qwerty123'})
-                    // Expect 400 - User exists already
-                    .expect(200, done)
+                    .send({username: 'abcd', email: 'raghav4494@gmail.com', name: 'raghavendran', password: 'qwerty123'})
+                    // Expect 409 - User exists already
+                    .expect(409, done)
             });
 
             it('should fail to register with already existing username and email id', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
                     .send({username: 'raghav4494', email: 'raghav4494@gmail.com', name: 'raghavendran', password: 'qwerty123'})
-                    // Expect 400 - User exists already
-                    .expect(400, done)
+                    // Expect 409 - User exists already
+                    .expect(409, done)
             });
         });
 
@@ -267,7 +270,7 @@ describe('GeneralApplication', function() {
             it('should fail to register with password less than 6 characters', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghav4494', password: 'ragh', email: 'raghav4494@gmail.com', name: 'Raghavendran'})
+                    .send({username: 'raghav44945', password: 'ragh', email: 'raghav44945@gmail.com', name: 'Raghavendran'})
                     // Expect 400 - schema attribute's properties are not met
                     .expect(400, done)
             });
@@ -275,7 +278,7 @@ describe('GeneralApplication', function() {
             it('should fail to register with password more than 12 characters', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghav4494', password: 'raghavendran4494', email: 'raghav4494@gmail.com', name: 'Raghavendran'})
+                    .send({username: 'raghav44945', password: 'raghavendran4494', email: 'raghav44945@gmail.com', name: 'Raghavendran'})
                     // Expect 400 - schema attribute's properties are not met
                     .expect(400, done)
             });
@@ -283,7 +286,7 @@ describe('GeneralApplication', function() {
             it('should fail to register with username less than 3 characters', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'ra', password: 'raghav4494', email: 'raghav4494@gmail.com', name: 'Raghavendran'})
+                    .send({username: 'ra', password: 'raghav4494', email: 'raghav44945@gmail.com', name: 'Raghavendran'})
                     // Expect 400 - schema attribute's properties are not met
                     .expect(400, done)
             });
@@ -291,22 +294,21 @@ describe('GeneralApplication', function() {
             it('should fail to register with username more than 15 characters', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghavendran4494', password: 'raghav4494', email: 'raghav4494@gmail.com', name: 'Raghavendran'})
+                    .send({username: 'raghavendran4494', password: 'raghav4494', email: 'raghav44945@gmail.com', name: 'Raghavendran'})
                     // Expect 400 - schema attribute's properties are not met
                     .expect(400, done)
             });
-
             it('should fail to register with name more than 30 characters', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghav4494', password: 'raghav4494', email: 'raghav4494@gmail.com', name: 'RaghavendranRaghavendranRaghavendran'})
+                    .send({username: 'raghav44945', password: 'raghav4494', email: 'raghav44945@gmail.com', name: 'RaghavendranRaghavendranRaghavendran'})
                     // Expect 400 - schema attribute's properties are not met
                     .expect(400, done)
             });
 
         });
 
-        // Remove all test docs inserted into the database (with name 'joe').
+        // Remove all test docs inserted into the database (with name 'raghavendran').
         after(removeUserDocs);
 
     });
