@@ -1,5 +1,6 @@
 var blueprint = require('@onehilltech/blueprint')
     , request   = require('supertest')
+    , session   = require('supertest-session')
     , expect    = require('chai').expect
     , assert    = require('chai').assert
     , appPath   = require('../fixtures/appPath')
@@ -37,6 +38,7 @@ describe('GeneralApplication', function() {
     before(function(done) {
         blueprint.testing.createApplicationAndStart(appPath, done);
     });
+
 
     // We group test cases in multiple levels of "describe" functions
     // simply for good organization. The first argument of each "describe"
@@ -157,20 +159,64 @@ describe('GeneralApplication', function() {
 
         describe('POST - account created', function() {
 
+            // Session for testing login.
+            //
+            // Note that neither Blueprint nor supertest provide support for 
+            // testing sessions. I must test those using supertest-session.
+
+            var loginSession = null;
 
             before(function(done) {
+                // Initialize session (using supertest-session) for testing login.
+                loginSession = session(blueprint.app.server.app);
+                // Insert test doc into the database.
                 insertUserDoc(done);
             });
 
-
-            it('should succeed in logging in', function(done) {
-                request(blueprint.app.server.app)
+            it('should fail to login with valid username but invalid password', function(done) {
+                loginSession
                     .post('/login')
-                    .send({username: 'raghav4494', password: 'qwerty123'})
+                    .send({username: 'jjj', password: 'notCorrectPassword'})
+                    .expect(401, done)
+            });
+
+            it('should succeed in logging in with valid credentials', function(done) {
+                loginSession
+                    .post('/login')
+                    .send({username: 'jjj', password: 'mypass'})
                     .expect(200, done)
             });
 
-            it('should be able to visit /buckchat/welcome once logged in');
+            it('should be able to visit /buckchat/welcome once logged in', function(done) {
+                loginSession
+                    .get('/buckchat/welcome')
+                    .expect(200, done);
+            });
+
+            it('should not be able to access non-existing page under /buckchat when logged in', function(done) {
+                // When logged out, the following request would give a 302 status.
+                loginSession
+                    .get('/buckchat/not-a-page')
+                    .expect(404, done);
+            });
+
+            describe('Logout', function() {
+
+                it('should succeed to log the user out', function(done) {
+                    loginSession
+                        .get('/logout')
+                        // Expect a 302 Found status since logout() redirects to the root of the site
+                        .expect(302, done);
+                });
+
+                it('should redirect to intro page when requesting page under /buckchat when logged out', function(done) {
+                    loginSession
+                        .get('/buckchat/not-a-page')
+                        .expect(302, done);
+                });
+            });
+
+
 
             after(removeUserDocs);
 

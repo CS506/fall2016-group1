@@ -1,6 +1,6 @@
 var blueprint = require('@onehilltech/blueprint')
     , util    = require('util')
-    , User    = require ('../models/User');
+    , User    = require('../models/User');
     ;
 
 function WelcomeController() {
@@ -10,8 +10,6 @@ function WelcomeController() {
 blueprint.controller(WelcomeController);
 
 WelcomeController.prototype.displayPage = function() {
-    var self = this;
-
     return function(req, res) {
         return res.render('welcome.pug', {name: req.user.name});
     };

@@ -23,4 +23,15 @@ Sufficiency | [56%](./design-sufficiency-measurements.md)
 
 ## Implementation Phase
 
-*Coming soon*
+Metric | Coverage
+--- | :---:
+Flexibility | [100%](./implementation-flexibility-measurements.md) 
+Robustness | [69%](./implementation-robustness-measurements.md)
+Sufficiency | [88%](./implementation-sufficiency-measurements.md)
+
+
+## Testing Phase
+
+Metric | Coverage
+--- | :---:
+Code coverage | *[coming soon](https://coveralls.io/github/CS506/fall2016-group1?branch=master)*
