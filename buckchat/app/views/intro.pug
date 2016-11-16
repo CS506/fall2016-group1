@@ -21,10 +21,11 @@ html(lang="en")
                     if (loginError)
                         p.alert.alert-danger Error: #{loginError}
 
+
                     div.form-group
                         label.col-sm-2.control-label(for="login-username") Username
                         div.col-sm-5
-                            input#login-username.form-control(type="text", name="username", placeholder="Type username here")
+                            input#login-username.forwordm-control(type="text", name="username", placeholder="Type username here")
 
                     div.form-group
                         label.col-sm-2.control-label(for="login-password") Password
@@ -42,25 +43,37 @@ html(lang="en")
 
                     legend Register
 
+                    //- Successful registration message.
+                    if (successMessage)
+                        p.alert.alert-success #{successMessage}
+
+                    //- Register error of any type (fields didn't pass validation, account already exists, etc.)
+                    if (registerError)
+                        div.alert.alert-danger
+                            p One or more fields are invalid! 
+                            p Error: #{registerError}
+
                     div.form-group
                         label.col-sm-2.control-label(for="register-name") Name
                         div.col-sm-5
-                            input#register-name.form-control(type="text", name="name", placeholder="Type full name here")
+                            input#register-name.form-control(type="text", name="name", placeholder="Type full name here (1-30 characters)",pattern="[a-zA-Z]{1,30}",title="Must contain 1 to 30 letters only")
 
                     div.form-group
                         label.col-sm-2.control-label(for="register-email") Email
                         div.col-sm-5
-                            input#register-email.forwordm-control(type="email", name="email", placeholder="Type email here")
+                            input#register-email.form-control(type="email", name="email", placeholder="Type email here",required)
 
                     div.form-group
                         label.col-sm-2.control-label(for="register-username") Username
                         div.col-sm-5
-                            input#register-username.forwordm-control(type="text", name="username", placeholder="Type username here")
+                            input#register-username.form-control(type="text", name="username", placeholder="Type username here (3-15 characters)",pattern="[a-zA-Z0-9]{3,15}",title="Must contain 3 to 15 alphanumerals only")
                     div.form-group
                         label.col-sm-2.control-label(for="register-password") Password
                         div.col-sm-5
-                            input#register-password.forwordm-control(type="password", name="password", placeholder="Type password here")
+                            input#register-password.form-control(type="password", name="password", placeholder="Type password here (6-12 alphanumeric charecters)",pattern="[a-zA-Z0-9]{6,12}",title="Must contain 6 to 12 alphanumerals only")
 
                     div.form-group
                         div.col-sm-offset-2.col-sm-5
                             button.btn.btn-default(type="submit") Register
+
+
