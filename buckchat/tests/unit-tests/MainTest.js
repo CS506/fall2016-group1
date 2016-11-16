@@ -183,7 +183,7 @@ describe('GeneralApplication', function() {
             it('should succeed in logging in with valid credentials', function(done) {
                 loginSession
                     .post('/login')
-                    .send({username: 'raghav4494', password: 'qwerty123'})
+                    .send({username: 'jjj', password: 'mypass'})
                     .expect(200, done)
             });
 
