@@ -218,7 +218,7 @@ describe('GeneralApplication', function() {
 
 
 
-            //after(removeUserDocs);
+
 
         });
     });
@@ -354,7 +354,7 @@ describe('GeneralApplication', function() {
 
         });
 
-        // Remove all test docs inserted into the database (with name 'raghavendran').
+        // Remove all test docs inserted into the database (with name 'raghavendran','joe').
         after(removeUserDocs);
 
     });
