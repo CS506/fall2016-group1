@@ -24,7 +24,7 @@ function insertUserDoc(done) {
 
 function removeUserDocs(done) {
     // Remove all test user documents in the database.
-    User.find({name: 'joe'}).remove(function(err) {
+    User.find({ $or: [ { name: 'joe' }, { name: 'raghavendran' }]}).remove(function(err) {
         done();
     });
 }
@@ -218,7 +218,7 @@ describe('GeneralApplication', function() {
 
 
 
-            after(removeUserDocs);
+
 
         });
     });
@@ -287,7 +287,7 @@ describe('GeneralApplication', function() {
             it('should fail to register with already existing username', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghav4494', email: 'abcd@gmail.com', name: 'raghavendran', password: 'qwerty123'})
+                    .send({username: 'jjj', email: 'abcd@gmail.com', name: 'raghavendran', password: 'qwerty123'})
                     // Expect 409 - User exists already
                     .expect(409, done)
             });
@@ -295,7 +295,7 @@ describe('GeneralApplication', function() {
             it('should fail to register with already existing email id', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'abcd', email: 'raghav4494@gmail.com', name: 'raghavendran', password: 'qwerty123'})
+                    .send({username: 'abcd', email: 'j@gmail.com', name: 'raghavendran', password: 'qwerty123'})
                     // Expect 409 - User exists already
                     .expect(409, done)
             });
@@ -303,7 +303,7 @@ describe('GeneralApplication', function() {
             it('should fail to register with already existing username and email id', function(done) {
                 request(blueprint.app.server.app)
                     .post('/register')
-                    .send({username: 'raghav4494', email: 'raghav4494@gmail.com', name: 'raghavendran', password: 'qwerty123'})
+                    .send({username: 'jjj', email: 'j@gmail.com', name: 'raghavendran', password: 'qwerty123'})
                     // Expect 409 - User exists already
                     .expect(409, done)
             });
@@ -354,7 +354,7 @@ describe('GeneralApplication', function() {
 
         });
 
-        // Remove all test docs inserted into the database (with name 'raghavendran').
+        // Remove all test docs inserted into the database (with name 'raghavendran','joe').
         after(removeUserDocs);
 
     });
