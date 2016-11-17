@@ -24,7 +24,7 @@ Requirement number | Test method | Reason for not being testable
 2.2.1 | I | 
 2.2.2 | I | 
 2.3 | no | necessary details given in later requirements
-2.3.1 | no | too high level
+2.3.1 | no | necessary details not given
 2.3.2 | no | necessary details given in later requirements
 2.3.2.1 | T | 
 2.3.2.2 | T | 
