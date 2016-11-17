@@ -1,6 +1,6 @@
 # Sprint 2 Metric Measurements
 
-These metrics are measured against the [baselined-requirements](./baselined-requirements.md). 
+These metrics are measured against the [baselined-requirements](./baselined-requirements.tex). 
 
 
 ## Requirements Phase

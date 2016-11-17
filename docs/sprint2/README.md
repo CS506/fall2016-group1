@@ -18,5 +18,5 @@ Create a drip | Zach, Raghav
 Display bucket list | Abhi, Russ, Ashish
 
 ## Other Artifacts
-* [Baselined requirements](./baselined-requirements.md)
+* [Baselined requirements](./baselined-requirements.tex)
 * [Metric measurements](./metrics.md)
