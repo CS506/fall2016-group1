@@ -17,12 +17,12 @@
 @@@ A drip shall belong to one or more buckets.
 @@@ The service shall scan the drip text for a hashtag symbol (\#). For each occurrence of the hashtag symbol (\#), the service shall determine a bucket name.
 @@@@ The service shall read the text string that begins with the character immediately following said hashtag symbol and ends with either (1) the character immediately before the first whitespace character (including a space or newline) following said hashtag symbol, (2) the character immediately before the first hashtag symbol (\#) following said hashtag symbol, or (3) the last character of the drip text, whichever appears first. This text string shall be the bucket name for said hashtag symbol.
-@@@@ \label{bucket-name-array}The service shall store the set of bucket name(s) to which said drip belongs as string(s) in an array. This array shall be referred to as the ``bucket-name array''.
+@@@@ \label{bucket-name-array}The service shall store the set of bucket name(s) to which said drip belongs as string(s) in an array. This array shall hereafter be referred to as the ``bucket-name array''.
 @@@ \label{no-bucket-error}If no hashtag symbol (\#) appears in the drip text, the service shall prevent the user from submitting the drip and shall display the following error message to the user: ``No bucket specified. Please specify a bucket for this drip by using the hashtag symbol (\#).''
 @@@ If a hashtag symbol (\#) appears but is immediately followed with a whitespace character, the service shall not consider said hashtag symbol as specifying a bucket.
 @@@ If a hashtag symbol (\#) appears as the last character of the drip text, the service shall not consider said hashtag symbol as specifying a bucket.
 @@ If no error is given as in Section~\ref{no-bucket-error}, the service shall insert a new document into the database.
-@@@ \label{field-list} The document shall have the following fields:
+@@@ \label{field-list}The document shall have the following fields:
 @@@@ The text of the drip, including all hashtags and bucket names, as originally submitted by the user.
 @@@@ The ``bucket-name array'' as defined in Section~\ref{bucket-name-array}.
 @@@@ The username of the user who submitted the drip.
