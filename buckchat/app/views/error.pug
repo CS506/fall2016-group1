@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        title Buckchat Messaging Service | Error
+
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+
+    body
+        //- Display HTTP status code to the user.
+        if (code)
+            h1 Error! Status code #{code}
+        else
+            h1 Error!
+
+        //- Display custom error message.
+        if (error)
+            p We are sorry, but the following error occurred: #{error}
+
+        //- Link for potentially resolving the issue.
+        p Try visiting the #[a(href="/") home page].

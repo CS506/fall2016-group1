@@ -1,7 +1,6 @@
 var blueprint   = require('@onehilltech/blueprint')
     , passport  = require('passport')
     , User      = require ('../models/User')
-    , errors = require('validator')
     ;
 
 module.exports = IntroPageController;
@@ -25,7 +24,11 @@ IntroPageController.prototype.login = function() {
         passport.authenticate('local', function(err, user, info) {
             // Check for database error
             if (err) {
-                return next(err)
+                // Send status code 500 Internal Server Error.
+                var code = 500;
+                res.status(code);
+                // Display custom error view.
+                return res.render('error.pug', {error: err, code: code});
             }
 
             // Check for invalid credentials error
@@ -76,9 +79,13 @@ IntroPageController.prototype.register = function() {
 
         // Checking for user exists already or not
         User.findOne({ $or: [ { email: registerEmail }, { username: registerUsername }]}, function(err, doc) {
-            // Error Handling
+            // Database error
             if (err) {
-                return handleError(err);
+                // Send status code 500 Internal Server Error.
+                var code = 500;
+                res.status(code);
+                // Display custom error view.
+                return res.render('error.pug', {error: err, code: code});
             }
 
             // Indicating availability of username and email
