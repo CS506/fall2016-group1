@@ -4,24 +4,7 @@ Artifacts for a specific sprint can be found in the corresponding directory abov
 
 ## Quality Characteristics
 
-### Requirements Quality Characteristics
-
-* Understandability
-* Testability
-* Self-completeness
-
-### Design Quality Characteristics
-
-* Understandability
-* Robustness
-* Sufficiency
-
-### Implementation Quality Characteristics
-
-* Flexibility
-* Robustness
-* Sufficiency 
-
+See our [metrics page](./metric-definitions/) for a discussion of our selected quality characteristics and metrics.
 
 ## High-level Features
 
