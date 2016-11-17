@@ -8,7 +8,7 @@ These metrics are measured against the [baselined-requirements](./baselined-requ
 Metric | Coverage
 --- | :---:
 Understandability | *TBD*
-Testability | *TBD*
+Testability | [69%](./requirements-testability-measurements.md)
 Self-completeness | *TBD*
 
 
