@@ -32,6 +32,9 @@ Sufficiency | [88%](./implementation-sufficiency-measurements.md)
 
 ## Testing Phase
 
-Metric | Coverage
+Code coverage
+
+Type | Coverage
 --- | :---:
-Code coverage | *[coming soon](https://coveralls.io/github/CS506/fall2016-group1?branch=master)*
+Statement | *[90.53%](https://coveralls.io/builds/8867474)*
+Branch | *77.27%*
