@@ -36,5 +36,5 @@ Code coverage
 
 Type | Coverage
 --- | :---:
-Statement | *[90.53%](https://coveralls.io/builds/8867474)*
-Branch | *77.27%*
+Statement | [90.53%](https://coveralls.io/builds/8867474)
+Branch | 77.27%
