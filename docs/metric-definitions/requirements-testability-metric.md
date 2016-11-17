@@ -15,5 +15,5 @@ that the requirement is operative in the finished product (Braude and Bernstein 
 
 ### References
 
-<sup>1</sup>Braude, E. J., & Bernstein, M. E. (2011). Software Engineering: Modern Approaches 
+Braude, E. J., & Bernstein, M. E. (2011). Software Engineering: Modern Approaches 
 (2nd ed.). Hoboken, NJ: John Wiley & Sons.
