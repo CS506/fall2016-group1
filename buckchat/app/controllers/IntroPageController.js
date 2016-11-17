@@ -50,7 +50,6 @@ IntroPageController.prototype.login = function() {
 // Logout functionality below is copied from Blueprint.js passport authentication 
 // tutorial at https://github.com/onehilltech/blueprint/wiki/Tutorials%3AAuthentication%3ASession
 
-
 /*
  * Action responsible for completing the logout process. It will redirect
  * the user to the login page.
@@ -63,7 +62,9 @@ IntroPageController.prototype.logout = function() {
     }
 };
 
-
+/*
+ * Action responsible for creating an account for the user given the form fields.
+ */ 
 IntroPageController.prototype.register = function() {
     return function(req, res) {
 
@@ -88,6 +89,7 @@ IntroPageController.prototype.register = function() {
                 // Validating with respect to model schema
                 user.validate(function(error) {
                     if (error) {
+                        // Send status code 400 Bad Request.
                         res.status(400);
                         return res.render('intro.pug', {registerError: error});
                     } else {
@@ -99,7 +101,8 @@ IntroPageController.prototype.register = function() {
 
             // Indicating form values are present already
             else {
-                 res.status(409);
+                // Send status code 409 Conflict.
+                res.status(409);
                 return res.render('intro.pug', {registerError: 'User exists already'});
             }
         });
