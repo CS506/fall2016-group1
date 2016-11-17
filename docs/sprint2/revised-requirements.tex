@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[at]{easylist}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\section*{Detailed Requirements (baselined version)}
+
+\begin{easylist}[articletoc]
+@ Upon logging in, the service shall display the home page.
+@ The home page shall display a Drip Creation form allowing the user to create a drip.
+@@ The Drip Creation form shall appear as the first section of the page.
+@@ The Drip Creation form shall consist of the following form elements:
+@@@ A text area for entering the drip text.
+@@@ A button labeled ``Drip'' for submitting the drip. The button shall appear immediately below the text area.
+@@ \label{submit-drip}When the user clicks the ``Drip'' button, the service shall determine the bucket(s) to which this drip belongs.
+@@@ A drip shall belong to one or more buckets.
+@@@ The service shall scan the drip text for a hashtag symbol (\#). For each occurrence of the hashtag symbol (\#), the service shall determine a bucket name.
+@@@@ The service shall read the text string that begins with the character immediately following said hashtag symbol and ends with either (1) the character immediately before the first whitespace character (including a space or newline) following said hashtag symbol, (2) the character immediately before the first hashtag symbol (\#) following said hashtag symbol, or (3) the last character of the drip text, whichever appears first. This text string shall be the bucket name for said hashtag symbol.
+@@@@ \label{bucket-name-array}The service shall store the set of bucket name(s) to which said drip belongs as string(s) in an array. This array shall be referred to as the ``bucket-name array''.
+@@@ \label{no-bucket-error}If no hashtag symbol (\#) appears in the drip text, the service shall prevent the user from submitting the drip and shall display the following error message to the user: ``No bucket specified. Please specify a bucket for this drip by using the hashtag symbol (\#).''
+@@@ If a hashtag symbol (\#) appears but is immediately followed with a whitespace character, the service shall not consider said hashtag symbol as specifying a bucket.
+@@@ If a hashtag symbol (\#) appears as the last character of the drip text, the service shall not consider said hashtag symbol as specifying a bucket.
+@@ If no error is given as in Section~\ref{no-bucket-error}, the service shall insert a new document into the database.
+@@@ \label{field-list} The document shall have the following fields:
+@@@@ The text of the drip, including all hashtags and bucket names, as originally submitted by the user.
+@@@@ The ``bucket-name array'' as defined in Section~\ref{bucket-name-array}.
+@@@@ The username of the user who submitted the drip.
+@@@@ The current date and time according to the clock of the machine on which the server is running.
+@@ After the document is inserted into the database, the user shall be directed to the home page and the following message shall be displayed above the Drip Creation form: ``Your drip was saved!''
+@ The home page shall display a list of buckets to the user. This list shall be termed the Bucket List.
+@@ The Bucket List will be a list of buttons for a specific bucket.
+@@ Clicking on the bucket button will take the user to that bucket’s page.
+@ Data Requirements
+@@ The service shall enforce the following form field requirements.
+@@@ Drip
+@@@@ The drip text shall be between 1 character and 160 characters in length.
+@@@@ The drip text shall include any hashtag identifiers of specified buckets in the 160 character limit.
+@@ The service shall store its data in a MongoDB database.
+@@@ The database shall have a \texttt{drips} collection to store drip data.
+@@@ The \texttt{drips} collection shall have fields for storing the respective form field values in Section \ref{field-list}.
+
+\end{easylist}
+
+\end{document}
