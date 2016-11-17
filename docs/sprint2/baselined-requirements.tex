@@ -22,7 +22,7 @@
 @@@ If a hashtag symbol (\#) appears but is immediately followed with a whitespace character, the service shall not consider said hashtag symbol as specifying a bucket.
 @@@ If a hashtag symbol (\#) appears as the last character of the drip text, the service shall not consider said hashtag symbol as specifying a bucket.
 @@ If no error is given as in Section~\ref{no-bucket-error}, the service shall insert a new document into the database.
-@@@ The document shall have the following fields:
+@@@ \label{field-list} The document shall have the following fields:
 @@@@ The text of the drip, including all hashtags and bucket names, as originally submitted by the user.
 @@@@ The ``bucket-name array'' as defined in Section~\ref{bucket-name-array}.
 @@@@ The username of the user who submitted the drip.
@@ -32,21 +32,14 @@
 @@ The Bucket List will be a list of buttons for a specific bucket.
 @@ Clicking on the bucket button will take the user to that bucket’s page.
 @@ Once the user is in the specific bucket’s page (bucket\_name-page), the drips will be displayed in the most-recent-on-top manner.
-% Should we move this refresh feature to a later sprint?
-@@ The bucket\_name-page shall refresh every 5 seconds to display any new drips posted by other users in that bucket.
 @ Data Requirements
 @@ The service shall enforce the following form field requirements.
 @@@ Drip
 @@@@ The drip text shall be between 1 character and 160 characters in length.
 @@@@ The drip text shall include any hashtag identifiers of specified buckets in the 160 character limit.
-% Is this Bucket section still relevant, considering our chosen schema? Our data is stored in terms of drips, not buckets. I may be missing something, though.
-@@@ Bucket
-@@@@ The bucket value shall have a field for bucket name and a field for the drips.
-@@@@ The drip text in the bucket shall include username, drip/text, and timestamp.
-@@ The service shall store its data in a MongoDB database
+@@ The service shall store its data in a MongoDB database.
 @@@ The database shall have a \texttt{drips} collection to store drip data.
-@@@ The \texttt{drips} collection shall have fields for storing the respective form field values in Section (Decide on schema).
-% Go ahead and fill in schema details?
+@@@ The \texttt{drips} collection shall have fields for storing the respective form field values in Section \ref{field-list}.
 
 \end{easylist}
 
