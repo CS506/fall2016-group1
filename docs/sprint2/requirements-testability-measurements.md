@@ -1,6 +1,6 @@
 # Requirements Testability Measurements
 
-See requirements [testability metric definition](../metric-definitions/requirements-testability-metric.md) 
+See [requirements testability metric definition](../metric-definitions/requirements-testability-metric.md) 
 for a discussion of this metric.
 
 ## Summary of Results
