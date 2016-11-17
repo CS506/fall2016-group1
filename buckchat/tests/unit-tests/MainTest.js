@@ -216,10 +216,6 @@ describe('GeneralApplication', function() {
                 });
             });
 
-
-
-
-
         });
     });
 
@@ -231,7 +227,7 @@ describe('GeneralApplication', function() {
         describe('POST', function() {
             it('should create an account if all user data is valid', function(done) {
                 request(blueprint.app.server.app)
-                    .get('/register')
+                    .post('/register')
                     .send({name: 'raghavendran', email: 'raghav4494@gmail.com', username: 'raghav4494', password: 'qwerty123'})
                     .expect(200, done);
             });
