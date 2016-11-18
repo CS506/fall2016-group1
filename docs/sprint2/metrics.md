@@ -9,7 +9,7 @@ Metric | Coverage
 --- | :---:
 Understandability | [80%](./requirements-understandability-measurements.md)
 Testability | [69%](./requirements-testability-measurements.md)
-Self-completeness | *TBD*
+Self-completeness | [100%](./requirements-self-completeness-measurements.md)
 
 
 ## Design Phase
