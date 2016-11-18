@@ -13,7 +13,7 @@ blueprint.controller(IntroPageController);
 
 
 /*
- * Action responsible for redirecting user to welcome page upon logging in.
+ * Action responsible for redirecting user to home page upon logging in.
  */ 
 IntroPageController.prototype.login = function() {
     return function(req, res, next) {
@@ -43,8 +43,8 @@ IntroPageController.prototype.login = function() {
                 if (err) {
                     return next(err);
                 }
-                // Redirect to the welcome view.
-                return res.render('welcome.pug', {name: req.user.name});
+                // Redirect to the home view.
+                return res.render('home.pug', {name: req.user.name});
             });
         })(req, res, next);
     };

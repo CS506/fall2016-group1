@@ -187,9 +187,9 @@ describe('GeneralApplication', function() {
                     .expect(200, done)
             });
 
-            it('should be able to visit /buckchat/welcome once logged in', function(done) {
+            it('should be able to visit /buckchat/home once logged in', function(done) {
                 loginSession
-                    .get('/buckchat/welcome')
+                    .get('/buckchat/home')
                     .expect(200, done);
             });
 
