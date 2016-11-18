@@ -5,8 +5,8 @@ See requirements [self-completeness metric definition](../metric-definitions/req
 
 ## Summary of Results
 
-* 31 detailed requirements total
-* ***31 (100%) are self-complete***
+* 30 detailed requirements total
+* ***30 (100%) are self-complete***
 
 ## Complete Tabular Results
 
@@ -39,7 +39,6 @@ Requirement number | Refers | Depends | Self-Complete?
 3.1 | Yes | Yes | Yes
 3.2 | Yes | Yes | Yes
 4.1 | Yes | Yes | Yes
-4.1.1 | Yes | Yes | Yes
 4.1.1.1 | Yes | Yes | Yes
 4.1.1.2 | Yes | Yes | Yes
 4.2 | Yes | Yes | Yes
