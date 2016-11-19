@@ -5,9 +5,9 @@ See requirements [understandability metric definition](../metric-definitions/req
 ## Summary of Results
 
 * 30 detailed requirements total
-* ***24 (80%) are understandable***
-* ***6 (20%) are partially understandable***
-* ***0 (0%) are not understandable***
+* 24 ***(80%)*** are ***understandable***
+* 6 ***(20%)*** are ***partially understandable***
+* 0 ***(0%)*** are ***not understandable***
 
 ## Complete Tabular Results
 
