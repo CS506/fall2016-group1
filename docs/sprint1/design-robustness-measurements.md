@@ -5,8 +5,8 @@ for a discussion of this metric.
 
 ## Summary of Results
 
-* Number of error conditions handled by design (C<sub>h</sub>): 6
 * Total number of error conditions (C<sub>t</sub>): 12
+* Number of error conditions handled by design (C<sub>h</sub>): 6
 * ***Robustness metric (R): 50%***
 
 ## Complete Results
