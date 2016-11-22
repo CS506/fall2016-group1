@@ -48,39 +48,58 @@ Requirements | Handled by design? | Sufficiency%
 
 &nbsp;&nbsp;&nbsp;The following tables provide information about what are the requirements covered by our design models. The first column in every table tells the type of design diagram. The second column lists the requirements covered by the design.
 
-### Login
+### Create Drip
 Design diagram |	Requirements Covered
 --- | :---:
-Activity diagram | 3.i
- | 3.ii(b,c,d)
-Data flow model |	3.i
- | 3.ii(b,d)
-State diagram |	3.ii(b,d)
+Activity diagram |	1
+ | 2
+ | 2.3
+ | 2.3.2
+ | 2.3.3
+ | 2.3.4
+ | 2.3.5
+ | 2.4
+Data flow model |	1
+ | 2
+ | 2.2.1
+ | 2.3
+ | 2.3.1
+ | 2.4
+ | 2.4.1
+ | 2.4.1.1
+ | 2.4.1.2
+ | 2.4.1.3
+ | 2.4.1.4
+State diagram |	1
+ | 2.3
+ | 2.3.2
+ | 2.3.3
+ | 2.3.4
+ | 2.3.5
+ | 2.4
 
-### Register
+
+### Bucket List
 Design diagram |	Requirements Covered
 --- | :---:
-Activity diagram |	2.i
- | 2.iii
- | 2.iv(a,b)
- | 2.v(b)
-Data flow model |	2.i
- | 2.ii
- | 2.iii
- | 2.iv(a,b)
- | 2.v(b) 
-State diagram |	2.i
- | 2.ii
- | 2.iv(a,b)
- | 2.v(b)
+Activity diagram |	3
+ | 3.1
+ | 3.2
+Data flow model |	3
+ | 3.2
+State diagram |	1
+ | 3
  
 
 ### Use case diagram
 Design diagram |	Requirements Covered
 --- | :---:
-Use case Diagram |	1.i
- | 2
+Use case Diagram |	2
  | 3
- | 4(i,ii)
+ | 4
+ | 4.1
+ | 4.1.1
+ | 4.1.1.1
+ | 4.1.1.2
 
 
