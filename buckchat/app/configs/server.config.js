@@ -2,6 +2,7 @@
     // ;
 
 var blueprint = require('@onehilltech/blueprint')
+    , winston = require('winston')
     ;
 
 var User;
@@ -44,12 +45,12 @@ module.exports = {
             session: {  
                 serializer: function(user, done) {
                     /* convert user model to id */ 
-                    console.log("serializing user.");
+                    winston.debug("Serializing user.");
                     done(null, user.username);
                 },
                 deserializer: function(id, done) {
                     /* convert id to a user model */
-                    console.log("deserializing user.");
+                    winston.debug("Deserializing user.");
                     User.findOne({ username: id }, function (err, user) {
                         if (err) {
                             return done(err);

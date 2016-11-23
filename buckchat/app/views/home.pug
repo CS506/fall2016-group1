@@ -13,3 +13,27 @@ html(lang="en")
 
             p
                 | Thank you for visiting Buckchat, #{name}.
+
+
+            form.form-horizontal(method='post', action='/buckchat/create-drip')
+                fieldset
+
+                    legend Create a Drip
+
+                    if (createDripSuccess)
+                        p.alert.alert-success #{createDripSuccess}
+
+
+                    if (createDripError)
+                        p.alert.alert-danger Error: #{createDripError}
+
+
+                    div.form-group
+                        div.col-sm-6
+                            textarea.forwordm-control(name="text", placeholder="Type drip text here", rows="4" cols="50")
+
+                    div.form-group
+                        div.col-sm-6
+                            button.btn.btn-default(type="submit") Drip
+
+

@@ -1,5 +1,6 @@
 var blueprint   = require('@onehilltech/blueprint')
     , passport  = require('passport')
+    , winston   = require('winston')
     , User      = require ('../models/User')
     ;
 
@@ -22,13 +23,9 @@ IntroPageController.prototype.login = function() {
         // NOTE: When using a custom callback, it is our responsibility to send a response 
         // and create the session (passportjs.org/docs#custom-callback)
         passport.authenticate('local', function(err, user, info) {
-            // Check for database error
             if (err) {
-                // Send status code 500 Internal Server Error.
-                var code = 500;
-                res.status(code);
-                // Display custom error view.
-                return res.render('error.pug', {error: err, code: code});
+                // Database error: send status code 500 Internal Server Error.
+                return handleError(res, err, 500);
             }
 
             // Check for invalid credentials error
@@ -59,7 +56,7 @@ IntroPageController.prototype.login = function() {
  */ 
 IntroPageController.prototype.logout = function() {
     return function(req, res) {
-        console.log('Logging user out.');
+        winston.debug('Logging user out.');
         req.logout();
         res.redirect('/');
     }
@@ -79,13 +76,9 @@ IntroPageController.prototype.register = function() {
 
         // Checking for user exists already or not
         User.findOne({ $or: [ { email: registerEmail }, { username: registerUsername }]}, function(err, doc) {
-            // Database error
             if (err) {
-                // Send status code 500 Internal Server Error.
-                var code = 500;
-                res.status(code);
-                // Display custom error view.
-                return res.render('error.pug', {error: err, code: code});
+                // Database error: send status code 500 Internal Server Error.
+                return handleError(res, err, 500);
             }
 
             // Indicating availability of username and email

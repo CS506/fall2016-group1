@@ -19,4 +19,7 @@ Display bucket list | Abhi, Russ, Ashish
 
 ## Other Artifacts
 * [Baselined requirements](./baselined-requirements.pdf)
+* [Revised requirements](./revised-requirements.pdf)\*
 * [Metric measurements](./metrics.md)
+
+\*Revised after measuring our requirements metrics.
