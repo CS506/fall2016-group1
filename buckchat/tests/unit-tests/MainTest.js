@@ -5,7 +5,7 @@ var blueprint    = require('@onehilltech/blueprint')
     , assert     = require('chai').assert
     , appPath    = require('../fixtures/appPath')
     , User       = require('../../app/models/User.js')
-    , testHelper = require('../plugins/TestHelper.js')
+    , testHelper = require('../fixtures/TestHelper.js')
     ;
 
 

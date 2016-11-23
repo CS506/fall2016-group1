@@ -3,7 +3,7 @@ var blueprint    = require('@onehilltech/blueprint')
     , session    = require('supertest-session')
     , expect     = require('chai').expect
     , appPath    = require('../fixtures/appPath')
-    , testHelper = require('../plugins/TestHelper.js')
+    , testHelper = require('../fixtures/TestHelper.js')
     ;
 
 
