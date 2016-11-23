@@ -20,6 +20,10 @@ html(lang="en")
 
                     legend Create a Drip
 
+                    if (createDripSuccess)
+                        p.alert.alert-success #{createDripSuccess}
+
+
                     if (createDripError)
                         p.alert.alert-danger Error: #{createDripError}
 
