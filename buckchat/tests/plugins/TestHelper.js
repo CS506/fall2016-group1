@@ -8,7 +8,7 @@ var User = require('../../app/models/User.js')
  * Your test cases may call these functions before/after test cases as needed.
  */
 
-module.exports.insertUserDoc = function(done) {
+module.exports.insertUserDocs = function(done) {
     // Insert a test user document in the database.
     var user = new User({name: 'joe', email: 'j@gmail.com', username: 'jjj', password: 'mypass'});
     user.save(function() {

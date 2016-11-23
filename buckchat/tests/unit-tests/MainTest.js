@@ -5,7 +5,7 @@ var blueprint    = require('@onehilltech/blueprint')
     , assert     = require('chai').assert
     , appPath    = require('../fixtures/appPath')
     , User       = require('../../app/models/User.js')
-    , testHelper = require('../../app/plugins/TestHelper.js')
+    , testHelper = require('../plugins/TestHelper.js')
     ;
 
 
@@ -150,7 +150,7 @@ describe('GeneralApplication', function() {
                 // Initialize session (using supertest-session) for testing login.
                 loginSession = session(blueprint.app.server.app);
                 // Insert test doc into the database.
-                testHelper.insertUserDoc(done);
+                testHelper.insertUserDocs(done);
             });
 
             it('should fail to login with valid username but invalid password', function(done) {
@@ -208,7 +208,7 @@ describe('GeneralApplication', function() {
     describe('Testing register feature', function() {
 
         // Insert test doc into the database.
-        before(testHelper.insertUserDoc);
+        before(testHelper.insertUserDocs);
 
         describe('POST', function() {
             it('should create an account if all user data is valid', function(done) {
