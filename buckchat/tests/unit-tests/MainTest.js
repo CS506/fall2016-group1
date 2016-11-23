@@ -1,33 +1,13 @@
-var blueprint = require('@onehilltech/blueprint')
-    , request   = require('supertest')
-    , session   = require('supertest-session')
-    , expect    = require('chai').expect
-    , assert    = require('chai').assert
-    , appPath   = require('../fixtures/appPath')
-    , User      = require('../../app/models/User.js')
+var blueprint    = require('@onehilltech/blueprint')
+    , request    = require('supertest')
+    , session    = require('supertest-session')
+    , expect     = require('chai').expect
+    , assert     = require('chai').assert
+    , appPath    = require('../fixtures/appPath')
+    , User       = require('../../app/models/User.js')
+    , testHelper = require('../../app/plugins/TestHelper.js')
     ;
 
-
-/*
- * HELPER FUNCTIONS
- * 
- * These are helper functions below that involve cleanup work with the database.
- * Your test cases may call these functions before/after test cases as needed.
- */
-function insertUserDoc(done) {
-    // Insert a test user document in the database.
-    var user = new User({name: 'joe', email: 'j@gmail.com', username: 'jjj', password: 'mypass'});
-    user.save(function() {
-        done();
-    });
-}
-
-function removeUserDocs(done) {
-    // Remove all test user documents in the database.
-    User.find({ $or: [ { name: 'joe' }, { name: 'raghavendran' }]}).remove(function(err) {
-        done();
-    });
-}
 
 /*
  * TEST CASES
@@ -170,7 +150,7 @@ describe('GeneralApplication', function() {
                 // Initialize session (using supertest-session) for testing login.
                 loginSession = session(blueprint.app.server.app);
                 // Insert test doc into the database.
-                insertUserDoc(done);
+                testHelper.insertUserDoc(done);
             });
 
             it('should fail to login with valid username but invalid password', function(done) {
@@ -351,7 +331,7 @@ describe('GeneralApplication', function() {
         });
 
         // Remove all test docs inserted into the database (with name 'raghavendran','joe').
-        after(removeUserDocs);
+        after(testHelper.removeUserDocs);
 
     });
 
