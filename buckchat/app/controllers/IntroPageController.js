@@ -1,5 +1,6 @@
 var blueprint   = require('@onehilltech/blueprint')
     , passport  = require('passport')
+    , winston   = require('winston')
     , User      = require ('../models/User')
     ;
 
@@ -55,7 +56,7 @@ IntroPageController.prototype.login = function() {
  */ 
 IntroPageController.prototype.logout = function() {
     return function(req, res) {
-        console.log('Logging user out.');
+        winston.debug('Logging user out.');
         req.logout();
         res.redirect('/');
     }
