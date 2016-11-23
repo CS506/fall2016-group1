@@ -196,6 +196,8 @@ describe('GeneralApplication', function() {
                 });
             });
 
+            // Remove all test docs inserted into the database.
+            after(testHelper.removeUserDocs);
         });
     });
 
@@ -204,6 +206,10 @@ describe('GeneralApplication', function() {
      * 
      */
     describe('Testing register feature', function() {
+
+        // Insert test doc into the database.
+        before(testHelper.insertUserDoc);
+
         describe('POST', function() {
             it('should create an account if all user data is valid', function(done) {
                 request(blueprint.app.server.app)
