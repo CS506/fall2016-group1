@@ -49,7 +49,7 @@ HomeController.prototype.createDrip = function() {
         // Attempt to save the drip.
         drip.save(function(err, drip) {
             if (err) {
-                // Database error
+                // Database error: send status code 500 Internal Server Error.
                 return handleError(res, err, 500);
             }
 
