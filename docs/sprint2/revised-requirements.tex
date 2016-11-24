@@ -6,6 +6,10 @@
 
 \section*{Detailed Requirements (revised version)}
 
+
+% Maximum character length for drips
+\newcommand{\dripMaxLength}{160}
+
 \begin{easylist}[articletoc]
 @ Upon logging in, the service shall display the home page.
 @ The home page shall display a Drip Creation form allowing the user to create a drip.
@@ -21,8 +25,10 @@
 @@@ The service shall prevent duplicate \textit{bucket names} in the ``bucket-name array.'' Two \textit{bucket names} are duplicates if a comparison between their text strings considers them to be equivalent.
 @@@ If a hashtag symbol (\#) appears but is immediately followed with a whitespace character, the service shall not consider said hashtag symbol as specifying a bucket.
 @@@ If a hashtag symbol (\#) appears as the last character of the drip text, the service shall not consider said hashtag symbol as specifying a bucket.
-@@@ \label{no-bucket-error}If no hashtag symbol (\#) specifying a bucket appears in the drip text, the service shall prevent the user from submitting the drip and shall display the following error message to the user: ``No bucket specified. Please specify a bucket for this drip by using the hashtag symbol (\#).''
-@@ If no error is given as in Section~\ref{no-bucket-error}, the service shall insert a new document into the database.
+@@ \label{bucket-error}The following shall be considered user errors in submitting a drip:
+@@@ If no hashtag symbol (\#) specifying a bucket appears in the drip text, the service shall prevent the user from submitting the drip and shall display the following error message to the user: ``No bucket specified. Please specify a bucket for this drip by using the hashtag symbol (\#).''
+@@@ If the length of the drip text is not within the required bounds specified in Section~\ref{drip-text-length}, the service shall prevent the user from submitting the drip and shall display the following error message to the user: ``Please limit yourself to \dripMaxLength{} characters.''
+@@ If no error is given as in Section~\ref{bucket-error}, the service shall insert a new document into the database.
 @@@ \label{field-list}The document shall have the following fields:
 @@@@ The text of the drip, including all hashtags and \textit{bucket names}, as originally submitted by the user.
 @@@@ The ``bucket-name array'' as defined in Section~\ref{bucket-name-array}.
@@ -35,8 +41,8 @@
 @ Data Requirements
 @@ The service shall enforce the following form field requirements.
 @@@ Drip
-@@@@ The drip text shall be between 1 character and 160 characters in length.
-@@@@ The drip text shall include any hashtag identifiers of specified buckets in the 160 character limit.
+@@@@ \label{drip-text-length}The drip text shall be between 1 character and \dripMaxLength{} characters in length.
+@@@@ The drip text shall include any hashtag identifiers of specified buckets in the \dripMaxLength{} character limit.
 @@ The service shall store its data in a MongoDB database.
 @@@ The database shall have a \texttt{drips} collection to store drip data.
 @@@ The \texttt{drips} collection shall have fields for storing the respective form field values in Section \ref{field-list}.
