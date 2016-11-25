@@ -25,6 +25,9 @@ HomeController.prototype.createDrip = function() {
     return function(req, res) {
         winston.debug('HomeController@createDrip() controller called.')
 
+        // Checking drip content matches data requirements
+        if(req.body.text.length <160) {
+
         // Get bucket name array.
         bucketNames = getBucketNameArray(req.body.text);
 
@@ -60,6 +63,15 @@ HomeController.prototype.createDrip = function() {
                 createDripSuccess: 'Your drip was saved!'
             });
         });
+        }
+        else {
+            // Bad Request - Conflict with Data requirements
+            res.status(400);
+            return res.render('home.pug', {
+                name: req.user.name,
+                createDripError: 'Please limit your drip up to 160 characters'
+            });
+        }
 
     };
 };
