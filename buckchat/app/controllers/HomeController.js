@@ -31,7 +31,7 @@ HomeController.prototype.createDrip = function() {
             res.status(400);
             return res.render('home.pug', {
                 name: req.user.name,
-                createDripError: 'Please limit your drip up to 160 characters'
+                createDripError: 'Please limit yourself to 160 characters.'
             });
         }
 
