@@ -24,10 +24,8 @@ HomeController.prototype.displayPage = function() {
 HomeController.prototype.createDrip = function() {
     return function(req, res) {
         winston.debug('HomeController@createDrip() controller called.')
-
         // Get bucket name array.
         bucketNames = getBucketNameArray(req.body.text);
-
         // Ensure there is at least one bucket specified.
         if (bucketNames.length <= 0) {
             winston.error('No bucket specified.');
@@ -57,10 +55,21 @@ HomeController.prototype.createDrip = function() {
             winston.debug('Drip saved!')
             return res.render('home.pug', {
                 name: req.user.name,
-                createDripSuccess: 'Your drip was saved!'
+                createDripSuccess: 'Your drip was saved!',
             });
         });
+    };
+};
 
+HomeController.prototype.bucketList = function() {
+    return function(req, res) {
+        winston.debug('HomeController@bucketList() controller called.')
+        var allBuckets = [];
+        allBuckets = Drip.find({}, {"_id": 0, "text": 0, "user": 0, "timestamp": 0, "bucketNames" : 1});
+        return res.render('home.pug', {
+            name: req.user.name,
+            userBuckets: allBuckets
+        });
     };
 };
 
