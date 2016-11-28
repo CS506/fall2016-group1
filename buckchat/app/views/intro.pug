@@ -56,7 +56,7 @@ html(lang="en")
                     div.form-group
                         label.col-sm-2.control-label(for="register-name") Name
                         div.col-sm-5
-                            input#register-name.form-control(type="text", name="name", placeholder="Type full name here (1-30 characters)",pattern="[a-zA-Z]{1,30}",title="Must contain 1 to 30 letters only")
+                            input#register-name.form-control(type="text", name="name", placeholder="Type full name here (1-30 characters)",pattern=".{1,30}",title="Must contain 1 to 30 letters only")
 
                     div.form-group
                         label.col-sm-2.control-label(for="register-email") Email
