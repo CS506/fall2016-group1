@@ -13,7 +13,8 @@ blueprint.controller(HomeController);
 
 HomeController.prototype.displayPage = function() {
     return function(req, res) {
-        return res.render('home.pug', {name: req.user.name});
+        // Call prototype method to generate the bucket list.
+        this.bucketList(req, res);
     };
 };
 
@@ -61,15 +62,41 @@ HomeController.prototype.createDrip = function() {
     };
 };
 
+
+/*
+ * Query the database for an array of bucket names, and then send the array
+ * to the home view to be displayed.
+ */
 HomeController.prototype.bucketList = function() {
     return function(req, res) {
         winston.debug('HomeController@bucketList() controller called.')
-        var allBuckets = [];
-        allBuckets = Drip.find({}, {"_id": 0, "text": 0, "user": 0, "timestamp": 0, "bucketNames" : 1});
-        return res.render('home.pug', {
-            name: req.user.name,
-            userBuckets: allBuckets
-        });
+
+        // Mongoose aggregate query. The following query is based off of the
+        // example here: http://stackoverflow.com/a/18578351/4467665
+        Drip.aggregate([
+            {$unwind: "$bucketNames"},
+            {$group: {
+                _id: null,
+                // Use $addToSet operator to prevent duplicates.
+                bucks: {$addToSet : "$bucketNames"}
+            }},
+            {$project: {
+                _id:0,
+                bucketNames: "$bucks"
+            }}
+        ], function(err, bucketArray) {
+            if (err) {
+                // Database error: send status code 500 Internal Server Error.
+                return handleError(res, err, 500);
+            }
+
+            // Else no error - render the view with the buckets.
+            return res.render('home.pug', {
+                name: req.user.name,
+                // Pass array of bucket names to the view.
+                userBuckets: bucketArray[0].bucketNames
+            });
+        });        
     };
 };
 
