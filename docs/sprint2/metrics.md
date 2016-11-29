@@ -16,7 +16,7 @@ Self-completeness | [100%](./requirements-self-completeness-measurements.md)
 
 Metric | Coverage
 --- | :---:
-Understandability | *TBD*
+Understandability | [95%](./design-understandability-measurements.md)
 Robustness | [0%](./design-robustness-measurements.md)
 Sufficiency | *TBD*
 

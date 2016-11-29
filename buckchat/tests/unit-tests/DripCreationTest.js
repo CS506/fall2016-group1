@@ -28,17 +28,31 @@ describe('DripCreationTest', function() {
         });
 
 
-        it('should loggin', function(done) {
+        it('should succeed in logging in', function(done) {
             userSession
                 .post('/login')
                 .send({username: 'jjj', password: 'mypass'})
                 .expect(200, done)
         });
 
-        it('should create a drip', function(done) {
+        it('should succeed in creating a drip', function(done) {
             userSession
                 .post('/buckchat/create-drip')
                 .send({text: 'TEST: I love the Smokies #hiking'})
+                .expect(200, done)
+        });
+
+        it('should succeed in creating a drip and save in multiple buckets', function(done) {
+            userSession
+                .post('/buckchat/create-drip')
+                .send({text: 'I love the Smokies #hiking #playing'})
+                .expect(200, done)
+        });
+
+        it('should succeed in creating a drip if there is a hashtag followed by a valid bucket name and empty hashtag', function(done) {
+            userSession
+                .post('/buckchat/create-drip')
+                .send({text: 'I love the Smokies #smoking #'})
                 .expect(200, done)
         });
         
@@ -47,6 +61,27 @@ describe('DripCreationTest', function() {
                 .post('/buckchat/create-drip')
                 .send({text: 'TEST: I love the Smokies'})
                 .expect(400, done)
+        });
+
+        it('should fail to create a drip having no bucket names specified in hashtag', function(done) {
+            userSession
+                .post('/buckchat/create-drip')
+                .send({text: 'I love the Smokies #'})
+                .expect(400, done)
+        });
+
+        it('should fail to create a drip with 161 characters', function(done) {
+            userSession
+                .post('/buckchat/create-drip')
+                .send({text: 'This is 161 characters #long. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat accumsan purus at hendrerit. Nullam suscipit, mi at aliquam on'})
+                .expect(400, done)
+        });
+
+        it('should succeed in creating a drip with 160 characters', function(done) {
+            userSession
+                .post('/buckchat/create-drip')
+                .send({text: 'This is 160 characters #long. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat accumsan purus at hendrerit. Nullam suscipit, mi at aliquam a'})
+                .expect(200, done)
         });
 
 

@@ -25,6 +25,17 @@ HomeController.prototype.displayPage = function() {
 HomeController.prototype.createDrip = function() {
     return function(req, res) {
         winston.debug('HomeController@createDrip() controller called.')
+
+        // Check that drip text is within the limit specified by requirements.
+        if (req.body.text.length > 160) {
+            // Send HTTP status 400 Bad Request.
+            res.status(400);
+            return res.render('home.pug', {
+                name: req.user.name,
+                createDripError: 'Please limit yourself to 160 characters.'
+            });
+        }
+
         // Get bucket name array.
         bucketNames = getBucketNameArray(req.body.text);
         // Ensure there is at least one bucket specified.
