@@ -16,11 +16,9 @@ This table gives the assignments for the design and implementation artifacts.
 
 Feature | Assignee(s)
 --- | ---
-* Display drips for a bucket | Zach, Abhi
-* Logout button | Russ
-* Choice of anonymity | Ashish, Raghav
+Display drips for a bucket | Zach, Abhi
+Logout button | Russ
+Choice of anonymity | Ashish, Raghav
 
 ## Other Artifacts
 * [Metric measurements](./metrics.md)
-
-\*Revised after measuring our requirements metrics.
