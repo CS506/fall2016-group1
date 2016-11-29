@@ -38,19 +38,20 @@ describe('DripCreationTest', function() {
         it('should create a drip', function(done) {
             userSession
                 .post('/buckchat/create-drip')
-                .send({text: 'I love the Smokies #hiking'})
+                .send({text: 'TEST: I love the Smokies #hiking'})
                 .expect(200, done)
         });
         
         it('should fail to create a drip without a hashtag', function(done) {
             userSession
                 .post('/buckchat/create-drip')
-                .send({text: 'I love the Smokies'})
+                .send({text: 'TEST: I love the Smokies'})
                 .expect(400, done)
         });
 
 
         after(function(done) {
+            testHelper.removeDrips();
             // Remove user doc from database.
             testHelper.removeUserDocs(done);
         });

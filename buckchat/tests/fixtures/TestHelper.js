@@ -1,4 +1,5 @@
 var User = require('../../app/models/User.js')
+var Drip = require('../../app/models/Drip.js')
     ;
 
 /*
@@ -20,5 +21,16 @@ module.exports.removeUserDocs = function(done) {
     // Remove all test user documents in the database.
     User.find({ $or: [ { name: 'joe' }, { name: 'raghavendran' }]}).remove(function(err) {
         done();
+    });
+}
+
+module.exports.removeDrips = function() {
+    args = arguments;
+    // Remove all test drips in the database.
+    Drip.find({"text": /TEST:/}).remove(function(err) {
+        // If callback argument was supplied, invoke it.
+        if (args.length > 0) {
+            args[0]();
+        }
     });
 }
