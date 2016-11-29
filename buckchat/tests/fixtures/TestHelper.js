@@ -10,7 +10,7 @@ var Drip = require('../../app/models/Drip.js')
  */
 
 module.exports.insertUserDocs = function() {
-    args = arguments;
+    var args = arguments;
     // Insert a test user document in the database.
     var user = new User({name: 'joe', email: 'j@gmail.com', username: 'jjj', password: 'mypass'});
     user.save(function() {
@@ -22,7 +22,7 @@ module.exports.insertUserDocs = function() {
 }
 
 module.exports.removeUserDocs = function() {
-    args = arguments;
+    var args = arguments;
     // Remove all test user documents in the database.
     User.find({ $or: [ { name: 'joe' }, { name: 'raghavendran' }]}).remove(function(err) {
         // If callback argument was supplied, invoke it.
@@ -33,7 +33,7 @@ module.exports.removeUserDocs = function() {
 }
 
 module.exports.removeDrips = function() {
-    args = arguments;
+    var args = arguments;
     // Remove all test drips in the database.
     Drip.find({"text": /TEST:/}).remove(function(err) {
         // If callback argument was supplied, invoke it.
