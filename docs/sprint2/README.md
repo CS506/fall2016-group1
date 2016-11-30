@@ -2,7 +2,7 @@
 
 ## Dates
 * Start date: November 11, 2016
-* End date: December 1, 2016
+* End date: December 2, 2016
 
 ## Features
 * Create a drip
