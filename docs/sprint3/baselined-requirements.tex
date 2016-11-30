@@ -7,8 +7,13 @@
 \section*{Detailed Requirements (baselined version)}
 
 \begin{easylist}[articletoc]
-@ Coming soon!
+@ When the user clicks a bucket name in the bucket list, the user shall be directed to said bucket's page. This bucket name shall hereafter be referred to as the \textit{bucket name}, and this page shall hereafter be referred to as the \textit{bucket page}.
+@@ The bucket page shall display a \textit{bucket title}.
+@@@ The bucket title shall be displayed at the top of the bucket page.
+@@@ The text of the bucket title shall be ``$\ll$bucket name$\gg$ Bucket.''
+@@ The bucket page shall display a \textit{drip list}.
+@@@ \label{drip-list-belonging}A drip shall belong in the drip list if said drip's \texttt{bucketNames} array contains the bucket name. This containment check shall be performed in a case-sensitive manner.
+@@@ Drips belonging in the drip list as per Section~\ref{drip-list-belonging} shall be listed in reverse chronological order\footnote{That is, the more recent drips shall be displayed at the top.}.
 
 \end{easylist}
-
 \end{document}
