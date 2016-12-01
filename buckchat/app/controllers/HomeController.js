@@ -25,17 +25,6 @@ HomeController.prototype.displayPage = function() {
 HomeController.prototype.createDrip = function() {
     return function(req, res) {
         winston.debug('HomeController@createDrip() controller called.')
-
-        // Check that drip text is within the limit specified by requirements.
-        if (req.body.text.length > 160) {
-            // Send HTTP status 400 Bad Request.
-            res.status(400);
-            return res.render('home.pug', {
-                name: req.user.name,
-                createDripError: 'Please limit yourself to 160 characters.'
-            });
-        }
-
         // Get bucket name array.
         bucketNames = getBucketNameArray(req.body.text);
         // Ensure there is at least one bucket specified.
@@ -67,7 +56,7 @@ HomeController.prototype.createDrip = function() {
             winston.debug('Drip saved!')
             return res.render('home.pug', {
                 name: req.user.name,
-                createDripSuccess: 'Your drip was saved!',
+                createDripSuccess: 'Your drip was saved!'
             });
         });
     };
@@ -111,6 +100,18 @@ HomeController.prototype.bucketList = function() {
     };
 };
 
+/*
+ * Query the database for drips in respective buckets, and then send the array of drips
+ * to the home view to be displayed.
+ * Currently, for sprint 2, this function redisplays the home page
+ */
+HomeController.prototype.showDrip = function() {
+    return function(req, res) {
+        return res.render('home.pug', {
+            name: req.user.name
+        });
+    };
+};
 
 /*
  * Given the text of the drip, return the array of bucket names.
