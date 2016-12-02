@@ -11,8 +11,7 @@ html(lang="en")
         div.container
             h1 Welcome!
 
-            p
-                | Thank you for visiting Buckchat, #{name}.
+            p Thank you for visiting Buckchat, #{name}.
 
 
 
@@ -20,6 +19,10 @@ html(lang="en")
                 fieldset
 
                     legend Create a Drip
+
+                    p Share what's on your mind. Use the hashtag (#) to specify one or more buckets for your drip. Example:
+
+                    blockquote I love the Smokey Mountains! #hiking
 
                     if (createDripSuccess)
                         p.alert.alert-success #{createDripSuccess}
@@ -40,7 +43,10 @@ html(lang="en")
             
             if(userBuckets)
                 form.form-horizontal(method='post', action='/buckchat/showDrip')
-                    legend Click on bucket name to view drips
+                    legend Bucket List
+
+                    p Click a bucket name to view its drips.
+
                     each individualBucket in userBuckets
                         div.form-group
                             div.col-sm-6
