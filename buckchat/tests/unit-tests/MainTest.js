@@ -180,6 +180,25 @@ describe('GeneralApplication', function() {
                     .expect(404, done);
             });
 
+            it('should redirect to home page when accessing / when logged in', function(done) {
+                loginSession
+                    .get('/')
+                    .expect(302, done);
+            });
+
+            it('should redirect to home page when accessing /login when logged in', function(done) {
+                loginSession
+                    .get('/login')
+                    .expect(302, done);
+            });
+
+            it('should redirect to home page when accessing /register when logged in', function(done) {
+                loginSession
+                    .get('/register')
+                    .expect(302, done);
+            });
+
+
             describe('Logout', function() {
 
                 it('should succeed to log the user out', function(done) {

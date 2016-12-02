@@ -39,21 +39,21 @@ describe('DripCreationTest', function() {
             userSession
                 .post('/buckchat/create-drip')
                 .send({text: 'TEST: I love the Smokies #hiking'})
-                .expect(200, done)
+                .expect(302, done)
         });
 
         it('should succeed in creating a drip and save in multiple buckets', function(done) {
             userSession
                 .post('/buckchat/create-drip')
                 .send({text: 'TEST: I love the Smokies #hiking #playing'})
-                .expect(200, done)
+                .expect(302, done)
         });
 
         it('should succeed in creating a drip if there is a hashtag followed by a valid bucket name and empty hashtag', function(done) {
             userSession
                 .post('/buckchat/create-drip')
                 .send({text: 'TEST: I love the Smokies #smoking #'})
-                .expect(200, done)
+                .expect(302, done)
         });
         
         it('should fail to create a drip without a hashtag', function(done) {
@@ -81,7 +81,7 @@ describe('DripCreationTest', function() {
             userSession
                 .post('/buckchat/create-drip')
                 .send({text: 'TEST: This is 160 characters #long. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat accumsan purus at hendrerit. Nullam suscipit, mi at ali'})
-                .expect(200, done)
+                .expect(302, done)
         });
 
 

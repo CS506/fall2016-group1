@@ -42,7 +42,7 @@ HomeController.prototype.displayPage = function() {
             var bucketNames = null;
 
             // Ensure the bucket array is not empty.
-            if (bucketArray && bucketArray[0]) {
+            if (bucketArray[0]) {
                 bucketNames = bucketArray[0].bucketNames
             }
 
@@ -106,10 +106,7 @@ HomeController.prototype.createDrip = function() {
 
             // Else drip successfully saved.
             winston.debug('Drip saved!');
-            return res.render('home.pug', {
-                name: req.user.name,
-                createDripSuccess: 'Your drip was saved!'
-            });
+            return res.redirect('home');
         });
     };
 };
