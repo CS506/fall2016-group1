@@ -50,6 +50,5 @@ html(lang="en")
                     p Click a bucket name to view its drips.
 
                     each individualBucket in userBuckets
-                        div.form-group
-                            div.col-sm-6
-                                button.btn.btn-info(type="submit", name="individualBucketButton", value=individualBucket) #{individualBucket}
+                        div.col-sm-3.form-group
+                            button.btn.btn-info(type="submit", name="individualBucketButton", value=individualBucket) #{individualBucket}
