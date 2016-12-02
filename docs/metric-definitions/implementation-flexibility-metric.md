@@ -25,6 +25,12 @@ Use undertsandable variable and funtion names | Understandability | Percentage o
 
 Note 1: This is a comparative measure. We compare all the methods and consider the ones with the highest standard deviation.
 
+h2 Revisions during Sprint 2
+
+We had a discussion about how we could define 'change' to the requirements. We feel that any change to existing requirements that causes us to completely change the
+structure of the implementation (Eg.: add/delete files, add/delete entire modules within files etc.) are deemed as drastic changes within the scope of this project.
+This change would make us redesign our future implementation as well.
+
 ---
 <sup>1</sup>Braude, E. J., & Bernstein, M. E. (2011). Software Engineering: Modern Approaches 
 (2nd ed.). Hoboken, NJ: John Wiley & Sons.
