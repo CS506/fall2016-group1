@@ -4,7 +4,7 @@ See [design understandability metric definition](../metric-definitions/design-un
 
 ## Summary of Results
 
-* Understandability of the design diagrams: 82.5%
+* Understandability of the design diagrams: 83%
 
 ## Complete Results
 
