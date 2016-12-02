@@ -42,7 +42,7 @@ HomeController.prototype.displayPage = function() {
             var bucketNames = null;
 
             // Ensure the bucket array is not empty.
-            if (bucketArray && bucketArray[0]) {
+            if (bucketArray[0]) {
                 bucketNames = bucketArray[0].bucketNames
             }
 
