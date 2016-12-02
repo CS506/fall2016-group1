@@ -18,7 +18,7 @@ blueprint.controller(HomeController);
  */
 HomeController.prototype.displayPage = function() {
     return function(req, res) {
-        winston.debug('HomeController@displayPage() controller called.')
+        winston.debug('HomeController@displayPage() controller called.');
 
         // Mongoose aggregate query. The following query is based off of the
         // example here: http://stackoverflow.com/a/18578351/4467665
@@ -39,11 +39,18 @@ HomeController.prototype.displayPage = function() {
                 return handleError(res, err, 500);
             }
 
-            // Else no error - render the view with the buckets.
+            var bucketNames = [];
+
+            // Ensure the bucket array is not empty.
+            if (bucketArray && bucketArray[0]) {
+                bucketNames = bucketArray[0].bucketNames
+            }
+
+            // Render the view with the buckets.
             return res.render('home.pug', {
                 name: req.user.name,
                 // Pass array of bucket names to the view.
-                userBuckets: bucketArray[0].bucketNames
+                userBuckets: bucketNames
             });
         });        
     };
@@ -55,7 +62,7 @@ HomeController.prototype.displayPage = function() {
  */ 
 HomeController.prototype.createDrip = function() {
     return function(req, res) {
-        winston.debug('HomeController@createDrip() controller called.')
+        winston.debug('HomeController@createDrip() controller called.');
 
         // Check that drip text is within the limit specified by requirements.
         if (req.body.text.length > 160) {
@@ -95,7 +102,7 @@ HomeController.prototype.createDrip = function() {
             }
 
             // Else drip successfully saved.
-            winston.debug('Drip saved!')
+            winston.debug('Drip saved!');
             return res.render('home.pug', {
                 name: req.user.name,
                 createDripSuccess: 'Your drip was saved!'
