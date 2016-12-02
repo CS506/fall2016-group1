@@ -18,7 +18,7 @@ Metric | Coverage
 --- | :---:
 Understandability | [95%](./design-understandability-measurements.md)
 Robustness | [0%](./design-robustness-measurements.md)
-Sufficiency | *TBD*
+Sufficiency | [86%](./design-sufficiency-measurements.md)
 
 
 ## Implementation Phase
