@@ -27,7 +27,7 @@ Metric | Coverage
 --- | :---:
 Flexibility | *TBD*
 Robustness | [96%](./implementation-robustness-measurements.md)
-Sufficiency | *TBD*
+Sufficiency | [97%](./implementation-sufficiency-measurements.md)
 
 
 ## Testing Phase
