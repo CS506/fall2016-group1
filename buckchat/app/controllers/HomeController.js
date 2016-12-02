@@ -47,6 +47,8 @@ HomeController.prototype.displayPage = function() {
             }
 
             // Render the view with the buckets.
+            // NOTE: If no buckets exist, `bucketNames` will be null --> view 
+            // must check for this!!
             return res.render('home.pug', {
                 name: req.user.name,
                 // Pass array of bucket names to the view.
@@ -76,6 +78,7 @@ HomeController.prototype.createDrip = function() {
 
         // Get bucket name array.
         bucketNames = getBucketNameArray(req.body.text);
+
         // Ensure there is at least one bucket specified.
         if (bucketNames.length <= 0) {
             winston.error('No bucket specified.');
