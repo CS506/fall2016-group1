@@ -30,7 +30,7 @@ initPassport() > authorize() function | 17.39 | 0 | 0 | 0 | 62.5 | 100 | 0 | Yes
 
 ## Observations
 
-* We can see that some of the mertics are not completely satisfied but with careful observation of the implementation source code we can notice that the code is sufficiently flexible to changes within a desirable range.
+* We can see that some of the metrics are not completely satisfied but with careful observation of the implementation source code we can notice that the code is sufficiently flexible to changes within a desirable range.
 * If the requirements undergo drastic changes then the implementation flexibility goes down drastically.
 * There are some attributes, like the number of comment lines, which are present at appropriate places but not in high numbers. These attributes would have a low value based on the actual count but are sufficiently placed in order to account for flexibility in our opinion. We feel that there is no need to clutter the file with a lot of comments in order to explain trivial concepts.
-* One area where we could improve is the named constants (Eg.: the status codes can be given meaningful names in order to facilitate easy understanding)
+* One area where we could improve is the named constants (e.g., the status codes can be given meaningful names in order to facilitate easy understanding)

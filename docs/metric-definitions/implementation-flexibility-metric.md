@@ -9,7 +9,7 @@ is said to be flexible.
 
 We derive our metric for flexibility from a discussion in the textbook *Software 
 Engineering: Modern Approaches*<sup>1</sup>. There is no direct way to measure the
-degree of flexibility but there are attributes which can be measured in order to come
+degree of flexibility, but there are attributes which can be measured in order to come
 to a conclusion about the degree of flexibility of our implementation. The attributes
 are as shown below:
 
@@ -17,20 +17,21 @@ Attribute | Reason | Metric
 --- | --- | ---
 Document precisely and thoroughly | Cannot adapt code that you don't understand | Percentage of comment lines
 Name constants | Understandability | Percentage of numerals with names
-Hide variables and methods where possible | Redusing complexity increases understanding | Methods with unusually high or low method size(See Note 1)
+Hide variables and methods where possible | Redusing complexity increases understanding | Methods with unusually high or low method size<sup>2</sup>
 Collect common code as helper methods and classes | Reduce complexity | Percentage of repeated code paragraphs
 Reduce dependency on global and external variables | Allows method to be used in other contexts | Percentage of external variables
 Program at a general level | Applies to more situations | Percentage of generic methods
 Use undertsandable variable and funtion names | Understandability | Percentage of names clearly difficult to understand
 
-Note 1: This is a comparative measure. We compare all the methods and consider the ones with the highest standard deviation.
 
 ## Revisions during Sprint 2
 
-We had a discussion about how we could define 'change' to the requirements. We feel that any change to existing requirements that causes us to completely change the
-structure of the implementation (Eg.: add/delete files, add/delete entire modules within files etc.) are deemed as drastic changes within the scope of this project.
+We had a discussion about how we could define *change* to the requirements. We feel that any change to existing requirements that causes us to completely change the
+structure of the implementation (e.g., add/delete files, add/delete entire modules within files etc.) are deemed as drastic changes within the scope of this project.
 This change would make us redesign our future implementation as well.
 
 ---
 <sup>1</sup>Braude, E. J., & Bernstein, M. E. (2011). Software Engineering: Modern Approaches 
 (2nd ed.). Hoboken, NJ: John Wiley & Sons.
+
+<sup>2</sup>This is a comparative measure. We compare all the methods and consider the ones with the highest standard deviation.
