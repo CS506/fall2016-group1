@@ -11,7 +11,7 @@ html(lang="en")
         div.container
             h1 Welcome!
 
-            if(userBuckets)
+            if (userBuckets)
                 p Thank you for visiting Buckchat, #{name}.
             else
                 p Thank you for visiting Buckchat.
@@ -43,7 +43,7 @@ html(lang="en")
                             button.btn.btn-default(type="submit") Drip
 
             
-            if(userBuckets)
+            if (userBuckets)
                 form.form-horizontal(method='post', action='/buckchat/showDrip')
                     legend Bucket List
 
