@@ -13,7 +13,5 @@ function isLoggedIn(req, res, next) {
 
 // Restrict routes in the `buckchat` directory to logged in users only. 
 module.exports = {
-    '/buckchat': {
-        use: isLoggedIn,
-    }
+    '/buckchat': { use: isLoggedIn }
 };
