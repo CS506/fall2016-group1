@@ -36,5 +36,5 @@ Code coverage
 
 Type | Coverage
 --- | :---:
-Statement | *TBD*
-Branch | *TBD*
+Statement | [91.3%](https://coveralls.io/builds/9094818)
+Branch | 76.47%
