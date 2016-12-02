@@ -32,7 +32,7 @@ describe('DripCreationTest', function() {
             userSession
                 .post('/login')
                 .send({username: 'jjj', password: 'mypass'})
-                .expect(200, done)
+                .expect(302, done)
         });
 
         it('should succeed in creating a drip', function(done) {

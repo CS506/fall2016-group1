@@ -41,7 +41,7 @@ IntroPageController.prototype.login = function() {
                     return next(err);
                 }
                 // Redirect to the home view.
-                return res.render('home.pug', {name: req.user.name});
+                return res.redirect('buckchat/home');
             });
         })(req, res, next);
     };
