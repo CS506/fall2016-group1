@@ -38,11 +38,6 @@ html(lang="en")
                             button.btn.btn-default(type="submit") Drip
 
             
-            form.form-horizontal(method='post', action='/buckchat/bucketList')
-                   div.form-group
-                       div.col-sm-6
-                           button.btn.btn-primary(type="submit") Click to view buckets
-
             if(userBuckets)
                 form.form-horizontal(method='post', action='/buckchat/showDrip')
                     legend Click on bucket name to view drips

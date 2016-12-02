@@ -3,10 +3,6 @@ module.exports = exports = {
         get : { action : 'HomeController@displayPage'}
     },
 
-    '/bucketList' : {
-        post : { action : 'HomeController@bucketList'}
-    },
-
     '/create-drip' : {
         post : { action : 'HomeController@createDrip'}
     },
