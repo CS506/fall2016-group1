@@ -11,8 +11,10 @@ html(lang="en")
         div.container
             h1 Welcome!
 
-            p Thank you for visiting Buckchat, #{name}.
-
+            if(userBuckets)
+                p Thank you for visiting Buckchat, #{name}.
+            else
+                p Thank you for visiting Buckchat.
 
 
             form.form-horizontal(method='post', action='/buckchat/create-drip')
