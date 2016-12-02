@@ -39,7 +39,7 @@ HomeController.prototype.displayPage = function() {
                 return handleError(res, err, 500);
             }
 
-            var bucketNames = [];
+            var bucketNames = null;
 
             // Ensure the bucket array is not empty.
             if (bucketArray && bucketArray[0]) {
