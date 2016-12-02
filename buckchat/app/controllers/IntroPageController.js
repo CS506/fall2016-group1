@@ -81,17 +81,17 @@ IntroPageController.prototype.register = function() {
                 return handleError(res, err, 500);
             }
 
-            // Indicating availability of username and email
+            // Username and email are available -- no error.
             if (doc === null) {
                 // Assigning values to model variables  
                 var user = new User({name: registerName, email: registerEmail, username: registerUsername, password: registerPassword});
 
                 // Validating with respect to model schema
-                user.validate(function(error) {
-                    if (error) {
+                user.validate(function(err) {
+                    if (err) {
                         // Send status code 400 Bad Request.
                         res.status(400);
-                        return res.render('intro.pug', {registerError: error});
+                        return res.render('intro.pug', {registerError: err});
                     } else {
                         user.save();
                         return res.render('intro.pug', {successMessage: 'User registration successfull! Now login with your credentials above.'});
@@ -99,7 +99,7 @@ IntroPageController.prototype.register = function() {
                 });
             }
 
-            // Indicating form values are present already
+            // Username or email already taken -- error!
             else {
                 // Send status code 409 Conflict.
                 res.status(409);
