@@ -106,10 +106,7 @@ HomeController.prototype.createDrip = function() {
 
             // Else drip successfully saved.
             winston.debug('Drip saved!');
-            return res.render('home.pug', {
-                name: req.user.name,
-                createDripSuccess: 'Your drip was saved!'
-            });
+            return res.redirect('home');
         });
     };
 };
