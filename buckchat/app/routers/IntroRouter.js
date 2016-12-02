@@ -1,11 +1,11 @@
 module.exports = {
     // Default router to direct user to intro page.
     '/': {
-        get: { view: 'intro.pug' }
+        get: { action: 'IntroPageController@displayPage' }
     },
 
     '/login': {
-        get: { view: 'intro.pug' },
+        get: { action: 'IntroPageController@displayPage' },
         post: {
             // Invoke the `login` function in the controller (which itself handles authentication).
             action: 'IntroPageController@login'
@@ -18,7 +18,7 @@ module.exports = {
     },
 
     '/register': {
-        get: { view: 'intro.pug' },
+        get: { action: 'IntroPageController@displayPage' },
         post: { action: 'IntroPageController@register'},
     }
 };

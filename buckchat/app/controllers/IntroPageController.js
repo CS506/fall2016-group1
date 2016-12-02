@@ -12,6 +12,22 @@ function IntroPageController() {
 
 blueprint.controller(IntroPageController);
 
+/*
+ * Action responsible for displaying the intro page.
+ */ 
+IntroPageController.prototype.displayPage = function() {
+    return function(req, res, next) {
+        // if user is already authenticated, redirect to home page.
+        if (req.isAuthenticated()) {
+            winston.debug('Already authenticated. Redirecting to home page.');
+            return res.redirect('buckchat/home');
+        }
+
+        // If not, display the intro page.
+        return res.render('intro.pug');
+    };
+};
+
 
 /*
  * Action responsible for redirecting user to home page upon logging in.
