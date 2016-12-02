@@ -43,8 +43,3 @@ Requirements | Implemented | Sufficiency%
 4.ii.a | Yes
 4.ii.b | Yes	
 4.ii.c | Yes
-
-
----
-<sup>1</sup>Braude, E. J., & Bernstein, M. E. (2011). Software Engineering: Modern Approaches 
-(2nd ed.). Hoboken, NJ: John Wiley & Sons.

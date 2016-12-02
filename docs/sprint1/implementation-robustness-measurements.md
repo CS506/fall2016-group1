@@ -23,8 +23,3 @@ IntroPageController.register() function | 0.5
 WelcomeController.displayPage() function | 0
 isLoggedIn() function | 1
 initPassport() > authorize() function | 1
-
-
----
-<sup>1</sup>Braude, E. J., & Bernstein, M. E. (2011). Software Engineering: Modern Approaches 
-(2nd ed.). Hoboken, NJ: John Wiley & Sons.

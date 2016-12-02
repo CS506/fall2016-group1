@@ -11,14 +11,20 @@ html(lang="en")
         div.container
             h1 Welcome!
 
-            p
-                | Thank you for visiting Buckchat, #{name}.
+            if (userBuckets)
+                p Thank you for visiting Buckchat, #{name}.
+            else
+                p Thank you for visiting Buckchat.
 
 
             form.form-horizontal(method='post', action='/buckchat/create-drip')
                 fieldset
 
                     legend Create a Drip
+
+                    p Share what's on your mind. Use the hashtag (#) to specify one or more buckets for your drip. Example:
+
+                    blockquote I love the Smokey Mountains! #hiking
 
                     if (createDripSuccess)
                         p.alert.alert-success #{createDripSuccess}
@@ -30,11 +36,20 @@ html(lang="en")
 
                     div.form-group
                         div.col-sm-6
-                            textarea.forwordm-control(name="text", placeholder="Type drip text here", rows="4" cols="50")
+                            textarea.forwordm-control(name="text", placeholder="Type drip text here", rows="4" cols="50", required, maxlength=160)
 
                     div.form-group
                         div.col-sm-6
                             button.btn.btn-default(type="submit") Drip
 
-            p Bucket Names = #{userBuckets}
+            
+            if (userBuckets)
+                form.form-horizontal(method='post', action='/buckchat/showDrip')
+                    legend Bucket List
 
+                    p Click a bucket name to view its drips.
+
+                    each individualBucket in userBuckets
+                        div.form-group
+                            div.col-sm-6
+                                button.btn.btn-info(type="submit", name="individualBucketButton", value=individualBucket) #{individualBucket}

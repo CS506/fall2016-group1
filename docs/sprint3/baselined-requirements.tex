@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage[at]{easylist}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\section*{Detailed Requirements (baselined version)}
+
+\begin{easylist}[articletoc]
+@ When the user clicks a bucket name in the bucket list, the user shall be directed to said bucket's page. This bucket name shall hereafter be referred to as the \textit{bucket name}, and this page shall hereafter be referred to as the \textit{bucket page}.
+@@ The bucket page shall display a \textit{back button} labeled ``Back'' at the top of the page.
+@@@ When the user clicks the back button, the user shall be directed to the home page.
+@@ The bucket page shall display a \textit{bucket title} immediately below the back button.
+@@@ The text of the bucket title shall be ``$\ll$bucket name$\gg$ Bucket.''
+@@ The bucket page shall display a \textit{drip list} immediately below the bucket title.
+@@@ \label{drip-list-belonging}A drip shall belong in the drip list if said drip's \texttt{bucketNames} array contains the bucket name. This containment check shall be performed in a case-sensitive manner.
+@@@ Drips belonging in the drip list as per Section~\ref{drip-list-belonging} shall be listed in reverse chronological order\footnote{That is, the more recent drips shall be displayed at the top.}.
+@@@ A drip shall include the drip text and the date and time that the drip was created.
+@@@@ If the drip is not anonymous, the name of the drip's author shall be displayed with the drip text.
+@@@ If no drip belongs in the drip list as per Section~\ref{drip-list-belonging}, the page shall display the following message: ``This bucket has no drips.''
+
+\end{easylist}
+\end{document}

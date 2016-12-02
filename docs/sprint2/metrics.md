@@ -18,7 +18,7 @@ Metric | Coverage
 --- | :---:
 Understandability | [95%](./design-understandability-measurements.md)
 Robustness | [0%](./design-robustness-measurements.md)
-Sufficiency | *TBD*
+Sufficiency | [86%](./design-sufficiency-measurements.md)
 
 
 ## Implementation Phase
@@ -26,7 +26,7 @@ Sufficiency | *TBD*
 Metric | Coverage
 --- | :---:
 Flexibility | *TBD*
-Robustness | *TBD*
+Robustness | [96%](./implementation-robustness-measurements.md)
 Sufficiency | *TBD*
 
 
@@ -36,5 +36,5 @@ Code coverage
 
 Type | Coverage
 --- | :---:
-Statement | *TBD*
-Branch | *TBD*
+Statement | [91.3%](https://coveralls.io/builds/9094818)
+Branch | 76.47%

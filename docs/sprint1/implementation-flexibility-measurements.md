@@ -28,7 +28,3 @@ initPassport() > authorize() function | 20 | 100 | 0 | 0 | 33.34 | 100 | 0 | Yes
 
 * We can see that some of the mertics are not completely satisfied but with careful observation of the implementation source code we can notice that the code is sufficiently flexible to changes within a desirable range.
 * If the requirements undergo drastic changes then the implementation flexibility goes down drastically.
-
----
-<sup>1</sup>Braude, E. J., & Bernstein, M. E. (2011). Software Engineering: Modern Approaches 
-(2nd ed.). Hoboken, NJ: John Wiley & Sons.
