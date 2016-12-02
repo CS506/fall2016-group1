@@ -164,7 +164,7 @@ describe('GeneralApplication', function() {
                 loginSession
                     .post('/login')
                     .send({username: 'jjj', password: 'mypass'})
-                    .expect(200, done)
+                    .expect(302, done)
             });
 
             it('should be able to visit /buckchat/home once logged in', function(done) {

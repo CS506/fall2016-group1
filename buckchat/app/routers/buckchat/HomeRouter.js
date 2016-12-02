@@ -5,5 +5,9 @@ module.exports = exports = {
 
     '/create-drip' : {
         post : { action : 'HomeController@createDrip'}
+    },
+
+    '/showDrip' : {
+        post : { action : 'HomeController@showDrip'}
     }
 };

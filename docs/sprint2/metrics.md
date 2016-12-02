@@ -26,7 +26,7 @@ Sufficiency | [86%](./design-sufficiency-measurements.md)
 Metric | Coverage
 --- | :---:
 Flexibility | *TBD*
-Robustness | *TBD*
+Robustness | [96%](./implementation-robustness-measurements.md)
 Sufficiency | *TBD*
 
 
