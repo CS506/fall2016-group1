@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        title Buckchat Home Page
+
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+
+    body
+        div.container
+
+            if(bucketDrips)
+                ul
+                    h1 #{individualBucketName} Bucket
+                    br
+                    each individualBucketDrip in bucketDrips
+                        p #{individualBucketDrip}
+                        br
