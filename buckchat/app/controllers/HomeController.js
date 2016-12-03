@@ -140,7 +140,7 @@ HomeController.prototype.showDrip = function() {
             }
 
             // Else no error - render the view with the drips.
-            return res.render('home.pug', {
+            return res.render('bucket.pug', {
                 name: req.user.name,
                 // Pass array of drips to the view.
                 bucketDrips: doc[0].text,
