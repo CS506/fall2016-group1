@@ -6,7 +6,6 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
-
     // If not, redirect to the intro page
     res.redirect('/');
 }
