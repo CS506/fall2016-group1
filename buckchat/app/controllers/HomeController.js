@@ -120,6 +120,8 @@ HomeController.prototype.showDrip = function() {
     return function(req, res) {
         winston.debug('HomeController@showDrip() controller called.')
         var individualBucketName = req.body.individualBucketButton;
+
+        // Query database for all drips in the `individualBucketName` bucket.
         Drip.find({bucketNames: individualBucketName}, 'text user timestamp').sort({timestamp: 'desc'}).exec(function(err, drips) {
             if (err) {
                 // Database error: send status code 500 Internal Server Error.
@@ -136,6 +138,7 @@ HomeController.prototype.showDrip = function() {
         });        
     };
 };
+
 
 /*
  * Given the text of the drip, return the array of bucket names.
