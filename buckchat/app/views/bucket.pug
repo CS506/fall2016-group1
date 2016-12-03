@@ -14,15 +14,14 @@ html(lang="en")
                 div.form-group
                     div.col-sm-6
                         button.btn.btn-default(type="submit") Back
-            if(bucketDrips && dripUserame && timeOfDrip)
+            if (drips)
                 h1 #{individualBucketName} Bucket
-                - var t = 0;
-                - var u = 0;
-                - for (var i = 0; i < bucketDrips.length; i++) {
+
+                //- Loop over the drips and print info for each one
+                each drip in drips
                     br
                     br
                     br
-                    blockquote #{bucketDrips[i]}
-                    p Posted by: #{dripUserame[i]}
-                    p Posted on: #{timeOfDrip[i]}
-                - }
+                    blockquote #{drip.text}
+                    p Posted by: #{drip.user}
+                    p Posted on: #{drip.timestamp}

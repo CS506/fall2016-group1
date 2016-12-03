@@ -120,27 +120,7 @@ HomeController.prototype.showDrip = function() {
     return function(req, res) {
         winston.debug('HomeController@showDrip() controller called.')
         var individualBucketName = req.body.individualBucketButton;
-        // Mongoose aggregate query. The following query is based off of the
-        // example here: http://stackoverflow.com/a/18578351/4467665
-        Drip.aggregate([
-            {$unwind: "$text"},
-            {$unwind: "$timestamp"},
-            {$unwind: "$user"},
-            {$match: { bucketNames: individualBucketName}},
-            {$group: {
-                _id: null,
-                //{_id: null, tmst: "$timestamp"},
-                txt: {$push : "$text"},
-                tmst: {$push : "$timestamp"},
-                usr: {$push : "$user"}
-            }},
-            {$project: {
-                _id:0,
-                text: "$txt",
-                timestamp: "$tmst",
-                user: "$usr"
-            }}
-        ], function(err, doc) {
+        Drip.find({bucketNames: individualBucketName}, 'text user timestamp', function(err, drips) {
             if (err) {
                 // Database error: send status code 500 Internal Server Error.
                 return handleError(res, err, 500);
@@ -150,9 +130,7 @@ HomeController.prototype.showDrip = function() {
             return res.render('bucket.pug', {
                 name: req.user.name,
                 // Pass array of drips to the view.
-                bucketDrips: doc[0].text,
-                timeOfDrip: doc[0].timestamp,
-                dripUserame: doc[0].user,
+                drips: drips,
                 individualBucketName: individualBucketName
             });
         });        
