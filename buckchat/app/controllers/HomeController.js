@@ -120,7 +120,7 @@ HomeController.prototype.showDrip = function() {
     return function(req, res) {
         winston.debug('HomeController@showDrip() controller called.')
         var individualBucketName = req.body.individualBucketButton;
-        Drip.find({bucketNames: individualBucketName}, 'text user timestamp', function(err, drips) {
+        Drip.find({bucketNames: individualBucketName}, 'text user timestamp').sort({timestamp: 'desc'}).exec(function(err, drips) {
             if (err) {
                 // Database error: send status code 500 Internal Server Error.
                 return handleError(res, err, 500);
