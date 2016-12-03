@@ -52,3 +52,11 @@ html(lang="en")
                     each individualBucket in userBuckets
                         div.col-sm-3.form-group
                             button.btn.btn-info(type="submit", name="individualBucketButton", value=individualBucket) #{individualBucket}
+
+            if(bucketDrips)
+                ul
+                    legend Bucket name: #{individualBucketName}
+                    br
+                    each individualBucketDrip in bucketDrips
+                        p #{individualBucketDrip}
+                        br

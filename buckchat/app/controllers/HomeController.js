@@ -115,13 +115,38 @@ HomeController.prototype.createDrip = function() {
 /*
  * Query the database for drips in respective buckets, and then send the array of drips
  * to the home view to be displayed.
- * Currently, for sprint 2, this function redisplays the home page
  */
 HomeController.prototype.showDrip = function() {
     return function(req, res) {
-        return res.render('home.pug', {
-            name: req.user.name
-        });
+        winston.debug('HomeController@showDrip() controller called.')
+        var individualBucketName = req.body.individualBucketButton;
+        // Mongoose aggregate query. The following query is based off of the
+        // example here: http://stackoverflow.com/a/18578351/4467665
+        Drip.aggregate([
+            {$unwind: "$text"},
+            {$match: { bucketNames: individualBucketName}},
+            {$group: {
+                _id: null,
+                txt: {$push : "$text"}
+            }},
+            {$project: {
+                _id:0,
+                text: "$txt"
+            }}
+        ], function(err, doc) {
+            if (err) {
+                // Database error: send status code 500 Internal Server Error.
+                return handleError(res, err, 500);
+            }
+
+            // Else no error - render the view with the drips.
+            return res.render('home.pug', {
+                name: req.user.name,
+                // Pass array of drips to the view.
+                bucketDrips: doc[0].text,
+                individualBucketName: individualBucketName
+            });
+        });        
     };
 };
 
