@@ -9,7 +9,10 @@ html(lang="en")
 
     body
         div.container
-
+            form.form-horizontal(method='get', action='/buckchat/home')
+                div.form-group
+                    div.col-sm-6
+                        button.btn.btn-default(type="submit") Back
             if(bucketDrips)
                 ul
                     h1 #{individualBucketName} Bucket
