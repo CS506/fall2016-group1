@@ -22,14 +22,6 @@ html(lang="en")
                     br
                     br
                     blockquote #{bucketDrips[i]}
-                    - while (u < dripUserame.length) {
-                        p Posted by: #{dripUserame[u]}
-                        - u++;
-                        - break;
-                    - }
-                    - while (t < timeOfDrip.length) {
-                        p Posted on: #{timeOfDrip[t]}
-                        - t++;
-                        - break;
-                    - }
+                    p Posted by: #{dripUserame[i]}
+                    p Posted on: #{timeOfDrip[i]}
                 - }
