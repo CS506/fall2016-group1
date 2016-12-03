@@ -14,9 +14,10 @@ html(lang="en")
                 div.form-group
                     div.col-sm-6
                         button.btn.btn-default(type="submit") Back
-            if (drips)
-                h1 #{individualBucketName} Bucket
 
+            h1 #{individualBucketName} Bucket
+
+            if (drips && drips.length > 0)
                 //- Loop over the drips and print info for each one
                 each drip in drips
                     br
@@ -25,3 +26,6 @@ html(lang="en")
                     blockquote #{drip.text}
                     p Posted by: #{drip.user}
                     p Posted on: #{drip.timestamp}
+            else
+                //- Else no drips - show error message.
+                p This bucket has no drips.
