@@ -109,6 +109,7 @@ IntroPageController.prototype.register = function() {
                         res.status(400);
                         return res.render('intro.pug', {registerError: err});
                     } else {
+                        // Save the user's information into the database
                         user.save();
                         return res.render('intro.pug', {successMessage: 'User registration successfull! Now login with your credentials above.'});
                     }
