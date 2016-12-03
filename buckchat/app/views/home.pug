@@ -16,7 +16,7 @@ html(lang="en")
             else
                 p Thank you for visiting Buckchat.
 
-
+            //Displaying the drip creation form
             form.form-horizontal(method='post', action='/buckchat/create-drip')
                 fieldset
 
@@ -42,7 +42,7 @@ html(lang="en")
                         div.col-sm-6
                             button.btn.btn-default(type="submit") Drip
 
-            
+            //Displaying the user's buckets
             if (userBuckets)
                 form.form-horizontal(method='post', action='/buckchat/showDrip')
                     legend Bucket List
