@@ -26,7 +26,6 @@ HomeController.prototype.displayPage = function() {
             {$unwind: "$bucketNames"},
             {$group: {
                 _id: null,
-                // Use $addToSet operator to prevent duplicates.
                 bucks: {$addToSet : "$bucketNames"}
             }},
             {$project: {
