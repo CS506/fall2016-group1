@@ -125,17 +125,20 @@ HomeController.prototype.showDrip = function() {
         Drip.aggregate([
             {$unwind: "$text"},
             {$unwind: "$timestamp"},
+            {$unwind: "$user"},
             {$match: { bucketNames: individualBucketName}},
             {$group: {
                 _id: null,
                 //{_id: null, tmst: "$timestamp"},
                 txt: {$push : "$text"},
-                tmst: {$push : "$timestamp"}
+                tmst: {$push : "$timestamp"},
+                usr: {$push : "$user"}
             }},
             {$project: {
                 _id:0,
                 text: "$txt",
-                timestamp: "$tmst"
+                timestamp: "$tmst",
+                user: "$usr"
             }}
         ], function(err, doc) {
             if (err) {
@@ -149,6 +152,7 @@ HomeController.prototype.showDrip = function() {
                 // Pass array of drips to the view.
                 bucketDrips: doc[0].text,
                 timeOfDrip: doc[0].timestamp,
+                dripUserame: doc[0].user,
                 individualBucketName: individualBucketName
             });
         });        

@@ -13,14 +13,23 @@ html(lang="en")
                 div.form-group
                     div.col-sm-6
                         button.btn.btn-default(type="submit") Back
-            if(bucketDrips && timeOfDrip)
+            if(bucketDrips && dripUserame && timeOfDrip)
                 h1 #{individualBucketName} Bucket
-                - var n = 0;
+                - var t = 0;
+                - var u = 0;
                 - for (var i = 0; i < bucketDrips.length; i++) {
+                    br
+                    br
+                    br
                     blockquote #{bucketDrips[i]}
-                    - while (n < timeOfDrip.length) {
-                        p Posted on: #{timeOfDrip[n]}
-                        - n++;
+                    - while (u < dripUserame.length) {
+                        p Posted by: #{dripUserame[u]}
+                        - u++;
+                        - break;
+                    - }
+                    - while (t < timeOfDrip.length) {
+                        p Posted on: #{timeOfDrip[t]}
+                        - t++;
                         - break;
                     - }
                 - }
