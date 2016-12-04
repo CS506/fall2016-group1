@@ -8,7 +8,7 @@ These metrics are measured against the baselined requirements.
 Metric | Coverage
 --- | :---:
 Understandability | *coming soon*
-Testability | *coming soon*
+Testability | [89%](./requirements-testability-measurements.md)
 Self-completeness | *coming soon*
 
 
