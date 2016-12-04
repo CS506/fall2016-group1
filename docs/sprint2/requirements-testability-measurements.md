@@ -56,9 +56,9 @@ themselves to be testable, but these details are given later. Thus, one should
 consult this table for details that cannot be learned from the single testability metric
 measurement.
 
-* After gaining some testing experience and reading more about software testing, 
-some of my intuition about "what is testable" has changed since sprint 1. Particularly, 
-I have considered some of the data requirements testable in this sprint that I would 
+* After we gained some testing experience and read more about software testing, 
+some of our intuition about "what is testable" has changed since sprint 1. We have 
+considered some of the data requirements testable in this sprint that we would 
 not have considered testable in sprint 1.
 
 
