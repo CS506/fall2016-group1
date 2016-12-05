@@ -2,7 +2,7 @@
 
 ## Dates
 * Start date: November 29, 2016
-* End date: December 12, 2016
+* End date: December 7, 2016
 
 ## Features
 * Display drips for a bucket
