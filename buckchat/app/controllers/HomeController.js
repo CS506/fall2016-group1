@@ -78,6 +78,7 @@ HomeController.prototype.createDrip = function() {
         // Get bucket name array.
         bucketNames = getBucketNameArray(req.body.text);
 
+
         // Ensure there is at least one bucket specified.
         if (bucketNames.length <= 0) {
             winston.error('No bucket specified.');
@@ -89,12 +90,15 @@ HomeController.prototype.createDrip = function() {
             });
         }
 
+
         // Else all data is valid, so create and insert a new drip document.
         var drip = new Drip({
             text: req.body.text,
             user: req.user.username,
-            bucketNames: bucketNames
+            bucketNames: bucketNames,
+            anonymous: req.body.anonymous
         });
+
 
         // Attempt to save the drip.
         drip.save(function(err, drip) {
@@ -105,8 +109,40 @@ HomeController.prototype.createDrip = function() {
 
             // Else drip successfully saved.
             winston.debug('Drip saved!');
-            return res.redirect('home');
-        });
+
+            // To get the latest/updated bucketnames
+            Drip.aggregate([
+                {$unwind: "$bucketNames"},
+                {$group: {
+                    _id: null,
+                // Use $addToSet operator to prevent duplicates.
+                    bucks: {$addToSet : "$bucketNames"}
+                }},
+                {$project: {
+                    _id:0,
+                    bucketNames: "$bucks"
+                }}
+                ], function(err, bucketArray) {
+
+                    if (err) {
+                    // Database error: send status code 500 Internal Server Error.
+                        return handleError(res, err, 500);
+                    }
+
+                    //To mark drip saved successfully
+                    res.status(302);
+
+                    var bucketNames = bucketArray[0].bucketNames;
+
+                    return res.render('home.pug', {
+                        name: req.user.name,
+                        createDripSuccess: 'Your drip was saved!',
+                        userBuckets: bucketNames       
+                    });
+
+                 });
+
+            }); 
     };
 };
 
@@ -121,7 +157,7 @@ HomeController.prototype.showDrip = function() {
         var individualBucketName = req.body.individualBucketButton;
 
         // Query database for all drips in the `individualBucketName` bucket.
-        Drip.find({bucketNames: individualBucketName}, 'text user timestamp').sort({timestamp: 'desc'}).exec(function(err, drips) {
+        Drip.find({bucketNames: individualBucketName}, 'text user timestamp anonymous').sort({timestamp: 'desc'}).exec(function(err, drips) {
             if (err) {
                 // Database error: send status code 500 Internal Server Error.
                 return handleError(res, err, 500);

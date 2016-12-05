@@ -42,6 +42,13 @@ describe('DripCreationTest', function() {
                 .expect(302, done)
         });
 
+        it('should succeed in creating an anonymous drip', function(done) {
+            userSession
+                .post('/buckchat/create-drip')
+                .send({text: 'TEST: I love the Smokies #hiking',anonymous: 'on'})
+                .expect(302, done)
+        });
+
         it('should succeed in creating a drip and save in multiple buckets', function(done) {
             userSession
                 .post('/buckchat/create-drip')
