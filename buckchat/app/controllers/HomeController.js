@@ -114,15 +114,30 @@ HomeController.prototype.createDrip = function() {
 /*
  * Query the database for drips in respective buckets, and then send the array of drips
  * to the home view to be displayed.
- * Currently, for sprint 2, this function redisplays the home page
  */
 HomeController.prototype.showDrip = function() {
     return function(req, res) {
-        return res.render('home.pug', {
-            name: req.user.name
-        });
+        winston.debug('HomeController@showDrip() controller called.')
+        var individualBucketName = req.body.individualBucketButton;
+
+        // Query database for all drips in the `individualBucketName` bucket.
+        Drip.find({bucketNames: individualBucketName}, 'text user timestamp').sort({timestamp: 'desc'}).exec(function(err, drips) {
+            if (err) {
+                // Database error: send status code 500 Internal Server Error.
+                return handleError(res, err, 500);
+            }
+
+            // Else no error - render the view with the drips.
+            return res.render('bucket.pug', {
+                name: req.user.name,
+                // Pass array of drips to the view.
+                drips: drips,
+                individualBucketName: individualBucketName
+            });
+        });        
     };
 };
+
 
 /*
  * Given the text of the drip, return the array of bucket names.
