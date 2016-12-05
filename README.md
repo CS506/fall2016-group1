@@ -5,6 +5,11 @@
 
 The Buckchat Messaging Service is a twitter-like service for making public and private posts.
 
+## Structure
+
+The `docs` directory contains documentation artifacts (including metric measurements and definitions, requirements, and design artifacts).
+
+The `buckchat` directory contains the source code of our application.
 
 ## Contributions
 
@@ -12,10 +17,12 @@ Please put all artifacts besides source code in the `docs` directory in the appr
 
 ### Installation
 
-Buckchat is developed on top of the [Blueprint.js](https://github.com/onehilltech/blueprint) middleware. Please see the [installation steps](https://github.com/CS506/fall2016-group1/wiki/Installation-Steps) on the wiki for installing prerequisite modules.
+Buckchat is developed on top of the [Blueprint.js](https://github.com/onehilltech/blueprint) middleware. Please see the [installation steps](https://github.com/CS506/fall2016-group1/wiki/Installation-Steps) on the wiki for installing prerequisite software.
 
 
 ## Helpful Links
+
+Here are some quick links to resources used in our project:
 
 * [Blueprint.js](https://github.com/onehilltech/blueprint)
 * [Blueprint.js CLI](https://github.com/onehilltech/blueprint-cli)
