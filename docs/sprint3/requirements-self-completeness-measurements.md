@@ -36,8 +36,3 @@ Requirement number | Refers | Depends | Self-Complete?
 
 
 
-## Observations
-
-* Our detailed requirements are self-complete across the board. Our set of requirements was carefully engineered to include all parts that would be required by each requirement. The requirements had all the requirements it refered to, and also included all the requirements it depends on.  
-* Going forward, we need to continue to be diligent to maintain our success in self-completeness. Making sure to include all the parts as we move along the process will become more critical to our success. 
-
