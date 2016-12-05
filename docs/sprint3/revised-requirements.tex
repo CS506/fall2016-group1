@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[at]{easylist}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\section*{Detailed Requirements (revised version)}
+
+\begin{easylist}[articletoc]
+@ When the user clicks a bucket name in the bucket list, the user shall be directed to said bucket's page. This bucket name shall hereafter be referred to as the \textit{bucket name}, and this page shall hereafter be referred to as the \textit{bucket page}.
+@@ The bucket page shall display a \textit{back button} labeled ``Back'' at the top of the page.
+@@@ When the user clicks the back button, the user shall be directed to the home page.
+@@ The bucket page shall display a \textit{bucket title} immediately below the back button.
+@@@ The text of the bucket title shall be ``$\ll$bucket name$\gg$ Bucket.''
+@@ The bucket page shall display a \textit{drip list} immediately below the bucket title.
+@@@ \label{drip-list-belonging}A drip shall belong in the drip list if said drip's \texttt{bucketNames} array contains the bucket name. This containment check shall be performed in a case-sensitive manner.
+@@@ Drips belonging in the drip list as per Section~\ref{drip-list-belonging} shall be listed in reverse chronological order\footnote{That is, the more recent drips shall be displayed at the top.}.
+@@@ A drip shall include the drip text and the date and time that the drip was created.
+@@@@ If the drip is not anonymous, the name of the drip's author shall be displayed with the drip text.
+@@@ If no drip belongs in the drip list as per Section~\ref{drip-list-belonging}, the page shall display the following message: ``This bucket has no drips.''
+@ The user will have an option of choosing whether the drips will show the username while being displayed in the respective bucket page(s), or not.
+@@ The user can choose anonymity while creating a new drip by checking the checkbox labelled \textit{Make Anonymous}.
+@@@ The \textit{Make Anonymous} checkbox will be unchecked by default.
+@@ Drips which are chosen to be anonymous, will not have any username displayed when viewed in their respective bucket page(s).
+@@ Anonymous drips will still be associated with their respective username in the database but will not show them in the bucket page.
+@ The user will have the option to logout of the webpage via a \textit{logout button}.
+@@ When the user clicks the \textit{logout button}, the user will be directed to the \textit{intro page}.
+@@ The \textit{logout button} will be visable at the top of the page on the \textit{home page} and also the \textit{bucket page}.
+
+\end{easylist}
+\end{document}
