@@ -7,9 +7,9 @@ These metrics are measured against the baselined requirements.
 
 Metric | Coverage
 --- | :---:
-Understandability | *coming soon*
+Understandability | [89%](./requirements-understandability-measurements.md)
 Testability | [89%](./requirements-testability-measurements.md)
-Self-completeness | *coming soon*
+Self-completeness | [100%](./requirements-self-completeness-measurements.md)
 
 
 ## Design Phase
