@@ -83,8 +83,8 @@ State diagram |	3.1
 Design diagram |	Requirements Covered
 --- | :---:
 Use case Diagram |	1
-| 2
-| 3
+ | 2
+ | 3
 
 
 
