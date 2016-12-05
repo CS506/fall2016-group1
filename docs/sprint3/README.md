@@ -21,4 +21,5 @@ Logout button | Russ
 Choice of anonymity | Ashish, Raghav
 
 ## Other Artifacts
+* [Baselined requirements](./baselined-requirements.pdf)
 * [Metric measurements](./metrics.md)
