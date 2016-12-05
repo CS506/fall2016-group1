@@ -7,7 +7,7 @@ module.exports = exports = {
         post : { action : 'HomeController@createDrip'}
     },
 
-    '/showDrip' : {
+    '/show-drip' : {
         post : { action : 'HomeController@showDrip'}
     }
 };
