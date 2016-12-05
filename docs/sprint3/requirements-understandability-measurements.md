@@ -37,7 +37,3 @@ Requirement number | Checklist item 1 | Checklist item 2 | Checklist item 3 | Ch
 
 
 
-## Observations
-
-* Many of the requirements are partially understandable. These may be necessary in the requirements document as this is the detailed requirements document. Although, we should consider revising the requirements which are not written in a language that its typical reader would understand (i.e. checklist item 1). This could be done by restructuring the requirement sentence, or by solving other checklist items so that it becomes understandable by the typical reader.
-
