@@ -17,7 +17,7 @@ Self-completeness | [100%](./requirements-self-completeness-measurements.md)
 Metric | Coverage
 --- | :---:
 Understandability | *coming soon*
-Robustness | *coming soon*
+Robustness | [80%](./design-robustness-measurements.md)
 Sufficiency | *coming soon*
 
 
