@@ -38,14 +38,14 @@ describe('DripCreationTest', function() {
         it('should succeed in creating a drip', function(done) {
             userSession
                 .post('/buckchat/create-drip')
-                .send({text: 'TEST: I love the Smokies #hiking'})
+                .send({text: 'TEST: I love the Smokies #hiking',anonymous: 'false'})
                 .expect(302, done)
         });
 
         it('should succeed in creating an anonymous drip', function(done) {
             userSession
                 .post('/buckchat/create-drip')
-                .send({text: 'TEST: I love the Smokies #hiking',anonymous: 'on'})
+                .send({text: 'TEST: I love the Smokies #hiking',anonymous: 'true'})
                 .expect(302, done)
         });
 

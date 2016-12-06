@@ -25,7 +25,7 @@ html(lang="en")
                     br
                     blockquote #{drip.text}
                     //- Checking whether the drip is anonymous or not
-                    if(drip.anonymous != 'on')
+                    if(drip.anonymous != 'true')
                         p Posted by: #{drip.user}
                     p Posted on: #{drip.timestamp}
             else

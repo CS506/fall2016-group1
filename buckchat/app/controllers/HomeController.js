@@ -90,13 +90,19 @@ HomeController.prototype.createDrip = function() {
             });
         }
 
+        var choice;
+        if(req.body.anonymous == 'on')
+            choice = true;
+        else
+            choice = false;
+
 
         // Else all data is valid, so create and insert a new drip document.
         var drip = new Drip({
             text: req.body.text,
             user: req.user.username,
             bucketNames: bucketNames,
-            anonymous: req.body.anonymous
+            anonymous: choice
         });
 
 
