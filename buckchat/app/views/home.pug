@@ -10,12 +10,18 @@ html(lang="en")
 
     body
         div.container
+            form.form-horizontal(method='get', action='/logout')
+                div.form-group
+                    div.col-sm-6
+                    button.btn.btn-default.pull-right(type="submit") Logout
+
             h1 Welcome!
 
             if (userBuckets)
                 p Thank you for visiting Buckchat, #{name}.
             else
                 p Thank you for visiting Buckchat.
+
 
             //- Displaying the drip creation form
             form.form-horizontal(method='post', action='/buckchat/create-drip')
