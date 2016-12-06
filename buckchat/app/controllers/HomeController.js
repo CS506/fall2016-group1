@@ -90,12 +90,11 @@ HomeController.prototype.createDrip = function() {
             });
         }
 
-        var choice;
-        if(req.body.anonymous == 'on')
+        // Decide whether drip is anonymous or not. 
+        var choice = false;
+        if (req.body.anonymous === 'on') {
             choice = true;
-        else
-            choice = false;
-
+        }
 
         // Else all data is valid, so create and insert a new drip document.
         var drip = new Drip({
