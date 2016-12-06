@@ -115,40 +115,8 @@ HomeController.prototype.createDrip = function() {
 
             // Else drip successfully saved.
             winston.debug('Drip saved!');
-
-            // To get the latest/updated bucketnames
-            Drip.aggregate([
-                {$unwind: "$bucketNames"},
-                {$group: {
-                    _id: null,
-                // Use $addToSet operator to prevent duplicates.
-                    bucks: {$addToSet : "$bucketNames"}
-                }},
-                {$project: {
-                    _id:0,
-                    bucketNames: "$bucks"
-                }}
-                ], function(err, bucketArray) {
-
-                    if (err) {
-                    // Database error: send status code 500 Internal Server Error.
-                        return handleError(res, err, 500);
-                    }
-
-                    //To mark drip saved successfully
-                    res.status(302);
-
-                    var bucketNames = bucketArray[0].bucketNames;
-
-                    return res.render('home.pug', {
-                        name: req.user.name,
-                        createDripSuccess: 'Your drip was saved!',
-                        userBuckets: bucketNames       
-                    });
-
-                 });
-
-            }); 
+            return res.redirect('home');
+        });
     };
 };
 
