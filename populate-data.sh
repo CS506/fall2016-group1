@@ -10,28 +10,28 @@ db.users.insert({
     username: 'ashish',
     password: 'password1',
     name: 'Ashish The Man',
-    email: 'test@ashish.com'
+    email: 'ashish@example.com'
 })
 
 db.users.insert({
     username: 'russ',
     password: 'password2',
     name: 'Russ The Man',
-    email: 'test@russ.com'
+    email: 'russ@example.com'
 })
 
 db.users.insert({
     username: 'abhi',
     password: 'password3',
     name: 'Abhi The Man',
-    email: 'test@abhi.com'
+    email: 'abhi@example.com'
 })
 
 db.users.insert({
     username: 'raghav',
     password: 'password4',
     name: 'Raghav The Man',
-    email: 'test@raghav.com'
+    email: 'raghav@example.com'
 })
 
 
