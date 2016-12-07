@@ -5,9 +5,9 @@ for a discussion of this metric.
 
 ## Summary of Results
 
- * Sum of robustness: 11.5
- * Number of methods: 12
- * ***Robustness metric (R): 96%***
+ * Sum of robustness: 10.5
+ * Number of methods: 11
+ * ***Robustness metric (R): 95%***
 
 ## Complete Results
 
@@ -21,7 +21,6 @@ Home view | 1 |
 Error view | 1 | 
 IntroPageController.login() function | 1 |
 IntroPageController.logout() function | 1 |
-IntroPageController.register() function | 1 |
 IntroPageController.register() function | 1 |
 WelcomeController.displayPage() function<sup>1</sup> | 1 |
 WelcomeController.createDrip() function | 0.5 | If `req.user.username` does not fit the length requirements in the model, the application will continue working, but the user will be directed to a useless error page. 
