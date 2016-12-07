@@ -26,7 +26,7 @@ Sufficiency | [86%](./design-sufficiency-measurements.md)
 Metric | Coverage
 --- | :---:
 Flexibility | [100%](./implementation-flexibility-measurements.md)
-Robustness | [96%](./implementation-robustness-measurements.md)
+Robustness | [95%](./implementation-robustness-measurements.md)
 Sufficiency | [97%](./implementation-sufficiency-measurements.md)
 
 
