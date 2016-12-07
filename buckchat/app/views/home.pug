@@ -39,6 +39,12 @@ html(lang="en")
                         div.col-sm-6
                             textarea.forwordm-control(name="text", placeholder="Type drip text here", rows="4" cols="50", required, maxlength=160)
 
+                    //- Checkbox to create anonymous drips
+                    p
+                        label
+                            input(type="checkbox", name="anonymous")
+                            | &nbsp;&nbsp;Make anonymous
+
                     div.form-group
                         div.col-sm-6
                             button.btn.btn-default(type="submit") Drip
