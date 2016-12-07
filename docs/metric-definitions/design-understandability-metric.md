@@ -6,8 +6,8 @@ Understandability metric = 1/2 * percentage of strongly cohesive modules + 1/2 *
 
 where 
 
-* strongly cohesive is when a module depends on or is dependent on another module, and the design does not make sense if either of the two modules was to be removed from the design; and
+* strongly cohesive is when a module depends on or is depended by another module, and the design does not make sense if either of the two modules was to be removed from the design; and
 
-* connected means that the module is directly connected to another module (the connection could be in-bound or out-bound).
+* connected means that the module is directly connected, via an edge, to another module (the connection could be in-bound or out-bound).
 
 * connected to very few others means that the module has at most one in-bound connection and one out-bound connection. We have modified this parameter to suit out project designs.
