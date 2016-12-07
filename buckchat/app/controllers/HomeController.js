@@ -20,6 +20,18 @@ HomeController.prototype.displayPage = function() {
     return function(req, res) {
         winston.debug('HomeController@displayPage() controller called.');
 
+        // Read and reset any success message.
+        var successMsg = req.session.successMsg;
+        if (req.session.successMsg) {
+            req.session.successMsg = null;
+        }
+
+        // Read and reset any error message.
+        var errorMsg = req.session.errorMsg;
+        if (req.session.errorMsg) {
+            req.session.errorMsg = null;
+        }
+
         // Mongoose aggregate query. The following query is based off of the
         // example here: http://stackoverflow.com/a/18578351/4467665
         Drip.aggregate([
@@ -51,7 +63,10 @@ HomeController.prototype.displayPage = function() {
             return res.render('home.pug', {
                 name: req.user.name,
                 // Pass array of bucket names to the view.
-                userBuckets: bucketNames
+                userBuckets: bucketNames,
+                // Pass any success or error message to the view.
+                createDripSuccess: successMsg,
+                createDripError: errorMsg
             });
         });        
     };
@@ -69,10 +84,8 @@ HomeController.prototype.createDrip = function() {
         if (req.body.text.length > 160) {
             // Send HTTP status 400 Bad Request.
             res.status(400);
-            return res.render('home.pug', {
-                name: req.user.name,
-                createDripError: 'Please limit yourself to 160 characters.'
-            });
+            req.session.errorMsg = 'Please limit yourself to 160 characters.';
+            return res.redirect('home');
         }
 
         // Get bucket name array.
@@ -84,10 +97,8 @@ HomeController.prototype.createDrip = function() {
             winston.error('No bucket specified.');
             // Send HTTP status 400 Bad Request.
             res.status(400);
-            return res.render('home.pug', {
-                name: req.user.name,
-                createDripError: 'No bucket specified. Please specify a bucket for this drip by using the hashtag symbol (#).'
-            });
+            req.session.errorMsg = 'No bucket specified. Please specify a bucket for this drip by using the hashtag symbol (#).';
+            return res.redirect('home');
         }
 
         // Decide whether drip is anonymous or not. 
@@ -114,6 +125,7 @@ HomeController.prototype.createDrip = function() {
 
             // Else drip successfully saved.
             winston.debug('Drip saved!');
+            req.session.successMsg = "Your drip has been saved!";
             return res.redirect('home');
         });
     };

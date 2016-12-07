@@ -67,21 +67,24 @@ describe('DripCreationTest', function() {
             userSession
                 .post('/buckchat/create-drip')
                 .send({text: 'TEST: I love the Smokies'})
-                .expect(400, done)
+                .expect(302)
+                .expect('Location', 'home', done)
         });
 
         it('should fail to create a drip having no bucket names specified in hashtag', function(done) {
             userSession
                 .post('/buckchat/create-drip')
                 .send({text: 'TEST: I love the Smokies #'})
-                .expect(400, done)
+                .expect(302)
+                .expect('Location', 'home', done)
         });
 
         it('should fail to create a drip with 161 characters', function(done) {
             userSession
                 .post('/buckchat/create-drip')
                 .send({text: 'TEST: This is 161 characters #long. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat accumsan purus at hendrerit. Nullam suscipit, mi at aliq'})
-                .expect(400, done)
+                .expect(302)
+                .expect('Location', 'home', done)
         });
 
         it('should succeed in creating a drip with 160 characters', function(done) {
