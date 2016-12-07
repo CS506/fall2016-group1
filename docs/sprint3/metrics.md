@@ -36,5 +36,5 @@ Code coverage
 
 Type | Coverage
 --- | :---:
-Statement | *coming soon*
-Branch | *coming soon*
+Statement | [91.3%](https://coveralls.io/builds/9163863)
+Branch | 71.43
