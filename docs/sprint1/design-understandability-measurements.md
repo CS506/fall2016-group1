@@ -11,7 +11,6 @@ See [design understandability metric definition](../metric-definitions/design-un
 We organize our measurements based on the feature. For each feature, the first column lists the type of design diagram. The second column lists the number of strongly cohesive modules. The third column lists the number of modules connected to very few other modules. The fourth column mentions the understandability percentage of that design diagram.
 
 ### Register
-
 Design diagram | Strongly cohesive modules | Modules connected to very few others | Understandability%
 --- | :---: | :---: | :---:
 Activity diagram | 5 | 3 | 80%
