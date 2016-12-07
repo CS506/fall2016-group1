@@ -28,7 +28,7 @@ Use undertsandable variable and funtion names | Understandability | Percentage o
 
 * We had a discussion about how we could define *change* to the requirements. We feel that any change to existing requirements that causes us to completely change the
 structure of the design and implementation (e.g., add/delete files, add/delete entire modules within files etc.) are deemed as drastic changes within the scope of this project.
-* This change would make us redesign our future implementation as well.
+* This change would make us redesign our future implementation as well. 
 * This change could be anywhere from having to change an entire core requirement in the requirements document to changing multiple core requirements in the requirements document. Even to the point where the entire requirements document is changed.
 
 ---
