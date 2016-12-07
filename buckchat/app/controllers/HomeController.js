@@ -82,8 +82,6 @@ HomeController.prototype.createDrip = function() {
 
         // Check that drip text is within the limit specified by requirements.
         if (req.body.text.length > 160) {
-            // Send HTTP status 400 Bad Request.
-            res.status(400);
             req.session.errorMsg = 'Please limit yourself to 160 characters.';
             return res.redirect('home');
         }
@@ -95,8 +93,6 @@ HomeController.prototype.createDrip = function() {
         // Ensure there is at least one bucket specified.
         if (bucketNames.length <= 0) {
             winston.error('No bucket specified.');
-            // Send HTTP status 400 Bad Request.
-            res.status(400);
             req.session.errorMsg = 'No bucket specified. Please specify a bucket for this drip by using the hashtag symbol (#).';
             return res.redirect('home');
         }
