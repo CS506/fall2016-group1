@@ -33,5 +33,5 @@ State diagram | 2 | 2 | 100%
 
 * The source and the sink nodes have not been considered in the module counts.
 * Percentages have been rounded off to the previous nearest integer.
-* The combined understandability of all the design diagrams is the average understandability percentage of each individual design diagram.
+* The combined understandability of all the design diagrams is the average understandability percentage of all design diagrams.
 
