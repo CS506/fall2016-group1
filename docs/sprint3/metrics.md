@@ -27,7 +27,7 @@ Metric | Coverage
 --- | :---:
 Flexibility | [100%](./implementation-flexibility-measurements.md)
 Robustness | [96%](./implementation-robustness-measurements.md)
-Sufficiency | *coming soon*
+Sufficiency | [100%](./implementation-sufficiency-measurements.md)
 
 
 ## Testing Phase
