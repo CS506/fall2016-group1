@@ -1,10 +1,14 @@
 # Documents
 
-Artifacts for a specific sprint can be found in the corresponding directory above. This page lists general information about the Buckchat Messaging Service.
+Requirements and design artifacts for a specific sprint can be found in the 
+corresponding sprint directory. This page lists general information about the 
+Buckchat Messaging Service.
 
 ## Quality Characteristics
 
 See our [metrics page](./metric-definitions/) for a discussion of our selected quality characteristics and metrics.
+
+See our [metric measurement graph](./all-metrics.pdf) to view all metrics over our three sprints.
 
 ## High-level Features
 
